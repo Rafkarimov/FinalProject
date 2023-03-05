@@ -1,0 +1,27 @@
+version: "3.8"
+services:
+  db:
+    image: postgres:latest
+#    build: .  # a Dockerfile must reside in this directory
+    container_name: final_db
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=final_db
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=admin
+    #      - POSTGRES_INITDB_ARGS=--locale=ru_RU.UTF-8 --lc-monetary=ru_RU.UTF-8
+    volumes:
+      #      - local_pgdata:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+#volumes:
+#  local_pgdata:
+
+# Docker commands
+
+# docker container ps  - показать все Докер контейнеры
+# docker volume ls - показать все Докер volumes
+# docker system prune -af - удаляет все, что с вязано с Докером
+# docker volume prune -f - удаляет все Докер volumes
+# docker container prune -f - удаляет все Докет контейнеры

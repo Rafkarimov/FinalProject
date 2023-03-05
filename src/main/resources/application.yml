@@ -1,0 +1,15 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: none # -- генерация БД при помощи Hibernate
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+  #    generate-ddl: true -- генерация БД при помощи JPA
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/final_db
+    username: user
+    password: admin
+#  sql:
+#    init:
+#      mode: always
