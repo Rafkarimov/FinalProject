@@ -1,6 +1,5 @@
 package ru.sber.finalproject.model;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ForeignKey;
 import jakarta.persistence.JoinColumn;
@@ -21,10 +20,10 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class Admin extends GenericModel{
+public class ChiefDoctor extends GenericModel{
     @ManyToOne
     @JoinColumn(name = "user_info_id", nullable = false, foreignKey = @ForeignKey(name = "admin_user_info_id_fkey"))
-    private UserInfo userInfo;
+    private Person person;
 
 
 }

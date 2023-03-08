@@ -20,7 +20,7 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @ToString
-public class UserInfo extends GenericModel {
+public class Person extends GenericModel {
     @Column(nullable = false)
     private String login;
 

@@ -26,7 +26,7 @@ import java.time.LocalDateTime;
 @EntityListeners(AuditingEntityListener.class)
 public class GenericModel {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "default_gen")
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "default_gen")
     @SequenceGenerator(name = "default_gen", sequenceName = "default_seq", allocationSize = 1)
     @Column(name = "id", nullable = false)
     protected Long id;

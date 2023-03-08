@@ -1,4 +1,4 @@
 package ru.sber.finalproject.model;
 
-public class Specialization {
+public class Reception {
 }
