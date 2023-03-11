@@ -12,22 +12,9 @@ CREATE TABLE person
     SNILS       VARCHAR(14)  NOT NULL
 );
 
+
 ALTER TABLE person
     ADD CONSTRAINT person_pkey PRIMARY KEY (id);
-
-
-CREATE TABLE visitor
-(
-    id        BIGINT GENERATED ALWAYS AS IDENTITY,
-    person_id INTEGER NOT NULL
-);
-
-ALTER TABLE visitor
-    ADD CONSTRAINT visitor_pkey PRIMARY KEY (id);
-COMMENT ON TABLE "visitor" IS 'в данной таблице будет храниться информация о всех посетителях ЛПУ: логин, пароль, ФИО, дата рождения, СНИЛС';
-
-ALTER TABLE visitor
-    ADD CONSTRAINT visitor_person_id_fkey FOREIGN KEY (person_id) REFERENCES person (id);
 
 
 CREATE TABLE med_specialization
@@ -37,15 +24,18 @@ CREATE TABLE med_specialization
     description VARCHAR(100) NOT NULL
 );
 
+
 ALTER TABLE med_specialization
     ADD CONSTRAINT med_specialization_pkey PRIMARY KEY (id);
 
+
 CREATE TABLE doctor
 (
-    id                BIGINT GENERATED ALWAYS AS IDENTITY,
-    person_id         BIGINT NOT NULL,
-    specialization_id BIGINT NOT NULL
+    id                    BIGINT GENERATED ALWAYS AS IDENTITY,
+    person_id             BIGINT NOT NULL,
+    med_specialization_id BIGINT NOT NULL
 );
+
 
 ALTER TABLE doctor
     ADD CONSTRAINT doctor_pkey PRIMARY KEY (id);
@@ -54,31 +44,30 @@ COMMENT ON TABLE "doctor" IS 'в данной таблице будет хран
 ALTER TABLE doctor
     ADD CONSTRAINT doctor_person_id_fkey FOREIGN KEY (person_id) REFERENCES person (id);
 ALTER TABLE doctor
-    ADD CONSTRAINT doctor_specialization_id_fkey FOREIGN KEY (specialization_id) REFERENCES med_specialization (id);
+    ADD CONSTRAINT doctor_med_specialization_id_fkey FOREIGN KEY (med_specialization_id) REFERENCES med_specialization (id);
 
 
-CREATE TABLE chief_doctor
+CREATE TABLE visitor
 (
-    id                BIGINT GENERATED ALWAYS AS IDENTITY,
-    person_id         BIGINT NOT NULL,
-    specialization_id BIGINT NOT NULL
+    id        BIGINT GENERATED ALWAYS AS IDENTITY,
+    person_id BIGINT NOT NULL
 );
 
-ALTER TABLE chief_doctor
-    ADD CONSTRAINT chief_doctor_pkey PRIMARY KEY (id);
-COMMENT ON TABLE "chief_doctor" IS 'главный врач';
 
-ALTER TABLE chief_doctor
-    ADD CONSTRAINT chief_doctor_person_id_fkey FOREIGN KEY (person_id) REFERENCES person (id);
-ALTER TABLE chief_doctor
-    ADD CONSTRAINT chief_doctor_specialization_id_fkey FOREIGN KEY (specialization_id) REFERENCES med_specialization (id);
+ALTER TABLE visitor
+    ADD CONSTRAINT visitor_pkey PRIMARY KEY (id);
+COMMENT ON TABLE "visitor" IS 'в данной таблице будет храниться информация о всех посетителях ЛПУ: логин, пароль, ФИО, дата рождения, СНИЛС';
+
+ALTER TABLE visitor
+    ADD CONSTRAINT visitor_person_id_fkey FOREIGN KEY (person_id) REFERENCES person (id);
 
 
 CREATE TABLE laboratory_assistant
 (
     id        BIGINT GENERATED ALWAYS AS IDENTITY,
-    person_id INTEGER NOT NULL
+    person_id BIGINT NOT NULL
 );
+
 
 ALTER TABLE laboratory_assistant
     ADD CONSTRAINT laboratory_assistant_pkey PRIMARY KEY (id);
@@ -87,6 +76,7 @@ COMMENT ON TABLE "laboratory_assistant" IS 'в данной таблице бу�
 ALTER TABLE laboratory_assistant
     ADD CONSTRAINT laboratory_assistant_person_id_fkey FOREIGN KEY (person_id) REFERENCES person (id);
 
+
 CREATE TABLE med_types_of_research
 (
     id          BIGINT GENERATED ALWAYS AS IDENTITY,
@@ -94,16 +84,35 @@ CREATE TABLE med_types_of_research
     description VARCHAR(100) NOT NULL
 );
 
+
 ALTER TABLE med_types_of_research
     ADD CONSTRAINT med_types_of_research_pkey PRIMARY KEY (id);
 COMMENT ON TABLE "med_types_of_research" IS 'тут будут храниться виды мед исследований';
 
 
+CREATE TABLE chief_doctor
+(
+    id                    BIGINT GENERATED ALWAYS AS IDENTITY,
+    person_id             BIGINT NOT NULL,
+    med_specialization_id BIGINT NOT NULL
+);
+
+
+ALTER TABLE chief_doctor
+    ADD CONSTRAINT chief_doctor_pkey PRIMARY KEY (id);
+COMMENT ON TABLE "chief_doctor" IS 'главный врач';
+
+ALTER TABLE chief_doctor
+    ADD CONSTRAINT chief_doctor_person_id_fkey FOREIGN KEY (person_id) REFERENCES person (id);
+ALTER TABLE chief_doctor
+    ADD CONSTRAINT chief_doctor_med_specialization_id_fkey FOREIGN KEY (med_specialization_id) REFERENCES med_specialization (id);
+
 CREATE TABLE laboratory_assistant_med_types
 (
-    laboratory_assistant_id  INTEGER NOT NULL,
-    med_types_of_research_id INTEGER NOT NULL
+    laboratory_assistant_id  BIGINT NOT NULL,
+    med_types_of_research_id BIGINT NOT NULL
 );
+
 
 ALTER TABLE laboratory_assistant_med_types
     ADD CONSTRAINT laboratory_assistant_med_types_pkey PRIMARY KEY (laboratory_assistant_id);
@@ -113,37 +122,12 @@ ALTER TABLE laboratory_assistant_med_types
 ALTER TABLE laboratory_assistant_med_types
     ADD CONSTRAINT laboratory_assistant_med_types_med_types_of_research_id_fkey FOREIGN KEY (med_types_of_research_id) REFERENCES med_types_of_research (id);
 
-
-CREATE TABLE visitor_research
-(
-    id                            BIGINT GENERATED ALWAYS AS IDENTITY,
-    visitor_id                    INTEGER NOT NULL,
-    laborant_assistant_id         INTEGER NOT NULL,
-    doctor_id                     INTEGER NOT NULL,
-    date_of_referral_for_research DATE    NOT NULL,
-    date_of_study                 DATE    NOT NULL,
-    med_types_of_research_id      INTEGER NOT NULL
-);
-
-ALTER TABLE visitor_research
-    ADD CONSTRAINT visitor_research_pkey PRIMARY KEY (id);
-COMMENT ON TABLE "visitor_research" IS 'база исследований пациентов';
-
-ALTER TABLE visitor_research
-    ADD CONSTRAINT visitor_research_visitor_id_fkey FOREIGN KEY (visitor_id) REFERENCES visitor (id);
-ALTER TABLE visitor_research
-    ADD CONSTRAINT visitor_research_laborant_assistant_id_fkey FOREIGN KEY (laborant_assistant_id) REFERENCES laboratory_assistant (id);
-ALTER TABLE visitor_research
-    ADD CONSTRAINT visitor_research_doctor_id_fkey FOREIGN KEY (doctor_id) REFERENCES doctor (id);
-ALTER TABLE visitor_research
-    ADD CONSTRAINT visitor_research_med_types_of_research_id_fkey FOREIGN KEY (med_types_of_research_id) REFERENCES med_types_of_research (id);
-
-
 CREATE TABLE reception_status
 (
     id     BIGINT GENERATED ALWAYS AS IDENTITY,
     status VARCHAR(100) NOT NULL
 );
+
 
 ALTER TABLE reception_status
     ADD CONSTRAINT reception_status_pkey PRIMARY KEY (id);
@@ -153,11 +137,12 @@ COMMENT ON TABLE "reception_status" IS 'статус приема';
 CREATE TABLE reception
 (
     id                  BIGINT GENERATED ALWAYS AS IDENTITY,
-    visitor_id          INTEGER   NOT NULL,
-    doctor_id           INTEGER   NOT NULL,
+    visitor_id          BIGINT    NOT NULL,
+    doctor_id           BIGINT    NOT NULL,
     reception_date_time TIMESTAMP NOT NULL,
-    status_id           INTEGER   NOT NULL
+    reception_status_id BIGINT
 );
+
 
 ALTER TABLE reception
     ADD CONSTRAINT reception_pkey PRIMARY KEY (id);
@@ -168,5 +153,29 @@ ALTER TABLE reception
 ALTER TABLE reception
     ADD CONSTRAINT reception_doctor_id_fkey FOREIGN KEY (doctor_id) REFERENCES doctor (id);
 ALTER TABLE reception
-    ADD CONSTRAINT reception_status_id_fkey FOREIGN KEY (status_id) REFERENCES reception_status (id);
+    ADD CONSTRAINT reception_reception_status_id_fkey FOREIGN KEY (reception_status_id) REFERENCES reception_status (id);
 
+CREATE TABLE visitor_research
+(
+    id                            BIGINT GENERATED ALWAYS AS IDENTITY,
+    visitor_id                    BIGINT NOT NULL,
+    doctor_id                     BIGINT NOT NULL,
+    laboratory_assistant_id       BIGINT NOT NULL,
+    date_of_referral_for_research DATE   NOT NULL,
+    date_of_study                 DATE   NOT NULL,
+    med_types_of_research_id      BIGINT NOT NULL
+);
+
+
+ALTER TABLE visitor_research
+    ADD CONSTRAINT visitor_research_pkey PRIMARY KEY (id);
+COMMENT ON TABLE "visitor_research" IS 'база исследований пациентов';
+
+ALTER TABLE visitor_research
+    ADD CONSTRAINT visitor_research_visitor_id_fkey FOREIGN KEY (visitor_id) REFERENCES visitor (id);
+ALTER TABLE visitor_research
+    ADD CONSTRAINT visitor_research_doctor_id_fkey FOREIGN KEY (doctor_id) REFERENCES doctor (id);
+ALTER TABLE visitor_research
+    ADD CONSTRAINT visitor_research_laboratory_assistant_id_fkey FOREIGN KEY (laboratory_assistant_id) REFERENCES laboratory_assistant (id);
+ALTER TABLE visitor_research
+    ADD CONSTRAINT visitor_research_med_types_of_research_id_fkey FOREIGN KEY (med_types_of_research_id) REFERENCES med_types_of_research (id);

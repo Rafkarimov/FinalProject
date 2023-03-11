@@ -31,22 +31,22 @@ public class GenericModel {
     @Column(name = "id", nullable = false)
     protected Long id;
 
-    @Column(name = "created_by", nullable = false, updatable = false)
+    @Column(name = "created_by", nullable = true, updatable = true)
     @CreatedBy
     @JsonIgnore
     protected String createdBy;
 
-    @Column(name = "created_when", nullable = false, updatable = false)
+    @Column(name = "created_when", nullable = true, updatable = true)
     @CreatedDate
     @JsonIgnore
     protected LocalDateTime createdWhen;
 
-    @Column(name = "modified_by", nullable = false)
+    @Column(name = "modified_by", nullable = true)
     @LastModifiedBy
     @JsonIgnore
     private String modifiedBy;
 
-    @Column(name = "modified_when", nullable = false)
+    @Column(name = "modified_when", nullable = true)
     @LastModifiedDate
     @JsonIgnore
     private LocalDateTime modifiedWhen;

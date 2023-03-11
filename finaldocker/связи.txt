@@ -1,0 +1,19 @@
+chief_doctor - ManyToOne - med_specialization +
+
+visitor - нет +
+
+doctor - OneToMany - med_specialization +
+
+laboratory_assistant - OneToMany - med_specialization +, ManyToMany - med_types_of_research +
+
+med_specialization - ManyToOne chief_doctor, doctor +
+
+person - ManyToOne - chief_doctor, visitor, doctor, laboratory_assistant +
+
+med_types_of_research - ManyToMany - laboratory_assistant+
+
+visitor_research - OneToMany - visitor, doctor, laboratory_assistant, med_types_of_research
+
+reception - ManyToOne - visitor, doctor, reception_status +
+
+reception_status - нет +

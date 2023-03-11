@@ -2,6 +2,9 @@ package ru.sber.finalproject.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.ForeignKey;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,7 +16,7 @@ import lombok.ToString;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "user_info")
+@Table(name = "person")
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -40,8 +43,27 @@ public class Person extends GenericModel {
     private LocalDate birthDate;
 
     @Column(nullable = false)
-    private LocalDate phone;
+    private String phone;
 
     @Column(nullable = false)
-    private LocalDate email;
+    private String email;
+
+    @Column(nullable = false)
+    private String snils;
+
+    @ManyToOne
+    @JoinColumn(name = "chief_doctor_id", nullable = false, foreignKey = @ForeignKey(name = "chief_doctor_person_id_fkey"))
+    private ChiefDoctor chiefDoctor;
+
+    @ManyToOne
+    @JoinColumn(name = "doctor_id", nullable = false, foreignKey = @ForeignKey(name = "doctor_person_id_fkey"))
+    private Doctor doctor;
+
+    @ManyToOne
+    @JoinColumn(name = "laboratory_assistant_id", nullable = false, foreignKey = @ForeignKey(name = "laboratory_assistant_person_id_fkey"))
+    private LaboratoryAssistant laboratoryAssistant;
+
+    @ManyToOne
+    @JoinColumn(name = "visitor_id", nullable = false, foreignKey = @ForeignKey(name = "visitor_person_id_fkey"))
+    private Visitor visitor;
 }

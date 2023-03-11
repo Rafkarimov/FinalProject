@@ -13,7 +13,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Table(name = "admin")
+@Table(name = "chief_doctor")
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -21,9 +21,8 @@ import lombok.ToString;
 @Setter
 @ToString
 public class ChiefDoctor extends GenericModel{
+
     @ManyToOne
-    @JoinColumn(name = "user_info_id", nullable = false, foreignKey = @ForeignKey(name = "admin_user_info_id_fkey"))
-    private Person person;
-
-
+    @JoinColumn(name = "med_specialization_id", nullable = false, foreignKey = @ForeignKey(name = "chief_doctor_med_specialization_id_fkey"))
+    private MedSpecialization medSpecialization;
 }
