@@ -12,7 +12,6 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 
 import java.util.Set;
 
@@ -23,9 +22,7 @@ import java.util.Set;
 @AllArgsConstructor
 @Getter
 @Setter
-@ToString
-public class LaboratoryAssistant extends GenericModel{
-
+public class LaboratoryAssistant extends GenericModel {
     @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinTable(name = "laboratory_assistant_med_types",
             joinColumns = @JoinColumn(name = "laboratory_assistant_id"),
@@ -34,4 +31,10 @@ public class LaboratoryAssistant extends GenericModel{
             inverseForeignKey = @ForeignKey(name = "laboratory_assistant_med_types_med_types_of_research_id_fkey"))
     private Set<MedTypesOfResearch> medTypesOfResearch;
 
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + "(" +
+                "modifiedBy = " + getModifiedBy() + ", " +
+                "modifiedWhen = " + getModifiedWhen() + ")";
+    }
 }

@@ -1,15 +1,19 @@
 CREATE TABLE person
 (
-    id          BIGINT GENERATED ALWAYS AS IDENTITY,
-    login       VARCHAR(100) NOT NULL,
-    password    VARCHAR(100) NOT NULL,
-    last_name   VARCHAR(100) NOT NULL,
-    first_name  VARCHAR(100) NOT NULL,
-    middle_name VARCHAR(100) NOT NULL,
-    birth_date  DATE         NOT NULL,
-    phone       VARCHAR      NOT NULL,
-    email       VARCHAR(100) NOT NULL,
-    SNILS       VARCHAR(14)  NOT NULL
+    id            BIGINT GENERATED ALWAYS AS IDENTITY,
+    login         VARCHAR(100) NOT NULL,
+    password      VARCHAR(100) NOT NULL,
+    last_name     VARCHAR(100) NOT NULL,
+    first_name    VARCHAR(100) NOT NULL,
+    middle_name   VARCHAR(100) NOT NULL,
+    birth_date    DATE         NOT NULL,
+    phone         VARCHAR      NOT NULL,
+    email         VARCHAR(100) NOT NULL,
+    snils         VARCHAR(14)  NOT NULL,
+    created_by    VARCHAR(100) NOT NULL,
+    created_when  TIMESTAMP    NOT NULL,
+    modified_by   VARCHAR(100) NOT NULL,
+    modified_when TIMESTAMP    NOT NULL
 );
 
 
@@ -19,9 +23,13 @@ ALTER TABLE person
 
 CREATE TABLE med_specialization
 (
-    id          BIGINT GENERATED ALWAYS AS IDENTITY,
-    title       VARCHAR(100) NOT NULL,
-    description VARCHAR(100) NOT NULL
+    id            BIGINT GENERATED ALWAYS AS IDENTITY,
+    title         VARCHAR(100) NOT NULL,
+    description   VARCHAR(100) NOT NULL,
+    created_by    VARCHAR(100) NOT NULL,
+    created_when  TIMESTAMP    NOT NULL,
+    modified_by   VARCHAR(100) NOT NULL,
+    modified_when TIMESTAMP    NOT NULL
 );
 
 
@@ -32,8 +40,12 @@ ALTER TABLE med_specialization
 CREATE TABLE doctor
 (
     id                    BIGINT GENERATED ALWAYS AS IDENTITY,
-    person_id             BIGINT NOT NULL,
-    med_specialization_id BIGINT NOT NULL
+    person_id             BIGINT       NOT NULL,
+    med_specialization_id BIGINT       NOT NULL,
+    created_by            VARCHAR(100) NOT NULL,
+    created_when          TIMESTAMP    NOT NULL,
+    modified_by           VARCHAR(100) NOT NULL,
+    modified_when         TIMESTAMP    NOT NULL
 );
 
 
@@ -49,8 +61,12 @@ ALTER TABLE doctor
 
 CREATE TABLE visitor
 (
-    id        BIGINT GENERATED ALWAYS AS IDENTITY,
-    person_id BIGINT NOT NULL
+    id            BIGINT GENERATED ALWAYS AS IDENTITY,
+    person_id     BIGINT       NOT NULL,
+    created_by    VARCHAR(100) NOT NULL,
+    created_when  TIMESTAMP    NOT NULL,
+    modified_by   VARCHAR(100) NOT NULL,
+    modified_when TIMESTAMP    NOT NULL
 );
 
 
@@ -64,8 +80,12 @@ ALTER TABLE visitor
 
 CREATE TABLE laboratory_assistant
 (
-    id        BIGINT GENERATED ALWAYS AS IDENTITY,
-    person_id BIGINT NOT NULL
+    id            BIGINT GENERATED ALWAYS AS IDENTITY,
+    person_id     BIGINT       NOT NULL,
+    created_by    VARCHAR(100) NOT NULL,
+    created_when  TIMESTAMP    NOT NULL,
+    modified_by   VARCHAR(100) NOT NULL,
+    modified_when TIMESTAMP    NOT NULL
 );
 
 
@@ -79,9 +99,13 @@ ALTER TABLE laboratory_assistant
 
 CREATE TABLE med_types_of_research
 (
-    id          BIGINT GENERATED ALWAYS AS IDENTITY,
-    title       VARCHAR(100) NOT NULL,
-    description VARCHAR(100) NOT NULL
+    id            BIGINT GENERATED ALWAYS AS IDENTITY,
+    title         VARCHAR(100) NOT NULL,
+    description   VARCHAR(100) NOT NULL,
+    created_by    VARCHAR(100) NOT NULL,
+    created_when  TIMESTAMP    NOT NULL,
+    modified_by   VARCHAR(100) NOT NULL,
+    modified_when TIMESTAMP    NOT NULL
 );
 
 
@@ -93,8 +117,12 @@ COMMENT ON TABLE "med_types_of_research" IS 'тут будут хранитьс�
 CREATE TABLE chief_doctor
 (
     id                    BIGINT GENERATED ALWAYS AS IDENTITY,
-    person_id             BIGINT NOT NULL,
-    med_specialization_id BIGINT NOT NULL
+    person_id             BIGINT       NOT NULL,
+    med_specialization_id BIGINT       NOT NULL,
+    created_by            VARCHAR(100) NOT NULL,
+    created_when          TIMESTAMP    NOT NULL,
+    modified_by           VARCHAR(100) NOT NULL,
+    modified_when         TIMESTAMP    NOT NULL
 );
 
 
@@ -109,8 +137,12 @@ ALTER TABLE chief_doctor
 
 CREATE TABLE laboratory_assistant_med_types
 (
-    laboratory_assistant_id  BIGINT NOT NULL,
-    med_types_of_research_id BIGINT NOT NULL
+    laboratory_assistant_id  BIGINT       NOT NULL,
+    med_types_of_research_id BIGINT       NOT NULL,
+    created_by               VARCHAR(100) NOT NULL,
+    created_when             TIMESTAMP    NOT NULL,
+    modified_by              VARCHAR(100) NOT NULL,
+    modified_when            TIMESTAMP    NOT NULL
 );
 
 
@@ -124,8 +156,12 @@ ALTER TABLE laboratory_assistant_med_types
 
 CREATE TABLE reception_status
 (
-    id     BIGINT GENERATED ALWAYS AS IDENTITY,
-    status VARCHAR(100) NOT NULL
+    id            BIGINT GENERATED ALWAYS AS IDENTITY,
+    status        VARCHAR(100) NOT NULL,
+    created_by    VARCHAR(100) NOT NULL,
+    created_when  TIMESTAMP    NOT NULL,
+    modified_by   VARCHAR(100) NOT NULL,
+    modified_when TIMESTAMP    NOT NULL
 );
 
 
@@ -137,10 +173,14 @@ COMMENT ON TABLE "reception_status" IS 'статус приема';
 CREATE TABLE reception
 (
     id                  BIGINT GENERATED ALWAYS AS IDENTITY,
-    visitor_id          BIGINT    NOT NULL,
-    doctor_id           BIGINT    NOT NULL,
-    reception_date_time TIMESTAMP NOT NULL,
-    reception_status_id BIGINT
+    visitor_id          BIGINT       NOT NULL,
+    doctor_id           BIGINT       NOT NULL,
+    reception_date_time TIMESTAMP    NOT NULL,
+    reception_status_id BIGINT,
+    created_by          VARCHAR(100) NOT NULL,
+    created_when        TIMESTAMP    NOT NULL,
+    modified_by         VARCHAR(100) NOT NULL,
+    modified_when       TIMESTAMP    NOT NULL
 );
 
 
@@ -158,12 +198,16 @@ ALTER TABLE reception
 CREATE TABLE visitor_research
 (
     id                            BIGINT GENERATED ALWAYS AS IDENTITY,
-    visitor_id                    BIGINT NOT NULL,
-    doctor_id                     BIGINT NOT NULL,
-    laboratory_assistant_id       BIGINT NOT NULL,
-    date_of_referral_for_research DATE   NOT NULL,
-    date_of_study                 DATE   NOT NULL,
-    med_types_of_research_id      BIGINT NOT NULL
+    visitor_id                    BIGINT       NOT NULL,
+    doctor_id                     BIGINT       NOT NULL,
+    laboratory_assistant_id       BIGINT       NOT NULL,
+    date_of_referral_for_research DATE         NOT NULL,
+    date_of_study                 DATE         NOT NULL,
+    med_types_of_research_id      BIGINT       NOT NULL,
+    created_by                    VARCHAR(100) NOT NULL,
+    created_when                  TIMESTAMP    NOT NULL,
+    modified_by                   VARCHAR(100) NOT NULL,
+    modified_when                 TIMESTAMP    NOT NULL
 );
 
 

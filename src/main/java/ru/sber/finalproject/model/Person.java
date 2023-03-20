@@ -1,9 +1,12 @@
 package ru.sber.finalproject.model;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ForeignKey;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -11,9 +14,9 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 
 import java.time.LocalDate;
+import java.util.Set;
 
 @Entity
 @Table(name = "person")
@@ -22,7 +25,6 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Getter
 @Setter
-@ToString
 public class Person extends GenericModel {
     @Column(nullable = false)
     private String login;
@@ -66,4 +68,30 @@ public class Person extends GenericModel {
     @ManyToOne
     @JoinColumn(name = "visitor_id", nullable = false, foreignKey = @ForeignKey(name = "visitor_person_id_fkey"))
     private Visitor visitor;
+
+    @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @JoinTable(name = "person_authority",
+            joinColumns = @JoinColumn(name = "person_id"),
+            foreignKey = @ForeignKey(name = "person_authority_authority_id_fkey"),
+            inverseJoinColumns = @JoinColumn(name = "authority_id"),
+            inverseForeignKey = @ForeignKey(name = "person_authority_person_id_fkey"))
+    private Set<Authority> authorities;
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + "(" +
+                "login = " + login + ", " +
+                "password = " + password + ", " +
+                "lastName = " + lastName + ", " +
+                "firstName = " + firstName + ", " +
+                "middleName = " + middleName + ", " +
+                "birthDate = " + birthDate + ", " +
+                "phone = " + phone + ", " +
+                "email = " + email + ", " +
+                "snils = " + snils + ", " +
+                "chiefDoctor = " + chiefDoctor + ", " +
+                "doctor = " + doctor + ", " +
+                "laboratoryAssistant = " + laboratoryAssistant + ", " +
+                "visitor = " + visitor + ")";
+    }
 }

@@ -20,8 +20,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class Doctor extends GenericModel{
-
+public class Doctor extends GenericModel {
     @ManyToOne
     @JoinColumn(name = "med_specialization_id", nullable = false, foreignKey = @ForeignKey(name = "doctor_med_specialization_id_fkey"))
     private MedSpecialization medSpecialization;

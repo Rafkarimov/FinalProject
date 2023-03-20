@@ -1,0 +1,8 @@
+npm install -g @vue/cli --установка в vue
+npm install vue
+vue --version
+vue create <name>
+npm run serve
+npm install --save bootstrap
+rmdir /s <name> - удаление каскадом папку
+npm install --save @popperjs/core --установка для бутстрап

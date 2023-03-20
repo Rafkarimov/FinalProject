@@ -18,7 +18,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class MedSpecialization extends GenericModel{
+public class MedSpecialization extends GenericModel {
     @Column(nullable = false)
     private String title;
 
