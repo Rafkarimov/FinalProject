@@ -53,7 +53,7 @@ ALTER TABLE person_authority
 
 CREATE TABLE med_specialization
 (
-    id            BIGINT GENERATED ALWAYS AS IDENTITY,
+    id            INTEGER      NOT NULL,
     title         VARCHAR(100) NOT NULL,
     description   text         NOT NULL,
     created_by    VARCHAR(100) NOT NULL,
@@ -142,7 +142,7 @@ ALTER TABLE chief_doctor
 
 CREATE TABLE med_types_of_research
 (
-    id            BIGINT GENERATED ALWAYS AS IDENTITY,
+    id            INTEGER      NOT NULL,
     title         VARCHAR(100) NOT NULL,
     description   text         NOT NULL,
     created_by    VARCHAR(100) NOT NULL,
