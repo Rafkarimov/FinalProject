@@ -8,6 +8,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -16,7 +17,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "person")
@@ -53,21 +55,37 @@ public class Person extends GenericModel {
     @Column(nullable = false)
     private String snils;
 
-    @ManyToOne
-    @JoinColumn(name = "chief_doctor_id", nullable = false, foreignKey = @ForeignKey(name = "chief_doctor_person_id_fkey"))
-    private ChiefDoctor chiefDoctor;
+//    @OneToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "chief_doctor_id", nullable = false, foreignKey = @ForeignKey(name = "chief_doctor_person_id_fkey"))
+//    private ChiefDoctor chiefDoctor;
+//
+//    @OneToOne
+//    @JoinColumn(name = "doctor_id", nullable = false, foreignKey = @ForeignKey(name = "doctor_person_id_fkey"))
+//    private Doctor doctor;
+//
+//    @OneToOne
+//    @JoinColumn(name = "laboratory_assistant_id", nullable = false, foreignKey = @ForeignKey(name = "laboratory_assistant_person_id_fkey"))
+//    private LaboratoryAssistant laboratoryAssistant;
+//
+//    @OneToOne
+//    @JoinColumn(name = "visitor_id", nullable = false, foreignKey = @ForeignKey(name = "visitor_person_id_fkey"))
+//    private Visitor visitor;
 
-    @ManyToOne
-    @JoinColumn(name = "doctor_id", nullable = false, foreignKey = @ForeignKey(name = "doctor_person_id_fkey"))
-    private Doctor doctor;
+//    @ManyToOne
+//    @JoinColumn(name = "chief_doctor_id", nullable = false, foreignKey = @ForeignKey(name = "chief_doctor_person_id_fkey"))
+//    private ChiefDoctor chiefDoctor;
 
-    @ManyToOne
-    @JoinColumn(name = "laboratory_assistant_id", nullable = false, foreignKey = @ForeignKey(name = "laboratory_assistant_person_id_fkey"))
-    private LaboratoryAssistant laboratoryAssistant;
-
-    @ManyToOne
-    @JoinColumn(name = "visitor_id", nullable = false, foreignKey = @ForeignKey(name = "visitor_person_id_fkey"))
-    private Visitor visitor;
+//    @ManyToOne
+//    @JoinColumn(name = "doctor_id", nullable = false, foreignKey = @ForeignKey(name = "doctor_person_id_fkey"))
+//    private Doctor doctor;
+//
+//    @ManyToOne
+//    @JoinColumn(name = "laboratory_assistant_id", nullable = false, foreignKey = @ForeignKey(name = "laboratory_assistant_person_id_fkey"))
+//    private LaboratoryAssistant laboratoryAssistant;
+//
+//    @ManyToOne
+//    @JoinColumn(name = "visitor_id", nullable = false, foreignKey = @ForeignKey(name = "visitor_person_id_fkey"))
+//    private Visitor visitor;
 
     @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinTable(name = "person_authority",
@@ -75,7 +93,7 @@ public class Person extends GenericModel {
             foreignKey = @ForeignKey(name = "person_authority_authority_id_fkey"),
             inverseJoinColumns = @JoinColumn(name = "authority_id"),
             inverseForeignKey = @ForeignKey(name = "person_authority_person_id_fkey"))
-    private Set<Authority> authorities;
+    private List<Authority> authorities = new ArrayList<>();
 
     @Override
     public String toString() {
@@ -88,10 +106,6 @@ public class Person extends GenericModel {
                 "birthDate = " + birthDate + ", " +
                 "phone = " + phone + ", " +
                 "email = " + email + ", " +
-                "snils = " + snils + ", " +
-                "chiefDoctor = " + chiefDoctor + ", " +
-                "doctor = " + doctor + ", " +
-                "laboratoryAssistant = " + laboratoryAssistant + ", " +
-                "visitor = " + visitor + ")";
+                "snils = " + snils + ", ";
     }
 }

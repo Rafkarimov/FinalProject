@@ -10,10 +10,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 @Entity
-@Table(name = "chief_doctor")
+@Table(name = "med_types_of_research")
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -26,8 +28,8 @@ public class MedTypesOfResearch extends GenericModel {
     @Column(nullable = false)
     private String description;
 
-    @ManyToMany(mappedBy = "medTypesOfResearch")
-    private Set<LaboratoryAssistant> laboratoryAssistantSet;
+    @ManyToMany(mappedBy = "medTypesOfResearchList")
+    private List<LaboratoryAssistant> laboratoryAssistantList = new ArrayList<>();
 
     @Override
     public String toString() {

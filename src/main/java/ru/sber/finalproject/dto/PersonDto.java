@@ -11,6 +11,7 @@ import ru.sber.finalproject.model.LaboratoryAssistant;
 import ru.sber.finalproject.model.Visitor;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Set;
 
 @Setter
@@ -27,10 +28,10 @@ public class PersonDto extends GenericDto {
     private String phone;
     private String email;
     private String snils;
-    private ChiefDoctor chiefDoctor;
-    private Doctor doctor;
-    private LaboratoryAssistant laboratoryAssistant;
-    private Visitor visitor;
-    private Set<Authority> authorities;
+//    private ChiefDoctor chiefDoctor;
+//    private Doctor doctor;
+//    private LaboratoryAssistant laboratoryAssistant;
+//    private Visitor visitor;
+    private List<Authority> authorities;
 
 }

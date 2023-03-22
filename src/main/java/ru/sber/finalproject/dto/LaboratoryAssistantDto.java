@@ -5,7 +5,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import ru.sber.finalproject.model.MedTypesOfResearch;
+import ru.sber.finalproject.model.Person;
 
+import java.util.List;
 import java.util.Set;
 
 @Setter
@@ -13,6 +15,7 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 public class LaboratoryAssistantDto extends GenericDto {
-    private Set<MedTypesOfResearch> medTypesOfResearch;
+    private Person person;
+    private List<MedTypesOfResearch> medTypesOfResearchList;
 
 }

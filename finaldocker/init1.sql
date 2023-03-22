@@ -36,11 +36,7 @@ COMMENT ON TABLE "authority" IS 'роли';
 CREATE TABLE person_authority
 (
     person_id     BIGINT       NOT NULL,
-    authority_id  BIGINT       NOT NULL,
-    created_by    VARCHAR(100) NOT NULL,
-    created_when  TIMESTAMP    NOT NULL,
-    modified_by   VARCHAR(100) NOT NULL,
-    modified_when TIMESTAMP    NOT NULL
+    authority_id  BIGINT       NOT NULL
 );
 
 ALTER TABLE person_authority
