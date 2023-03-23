@@ -1,5 +1,6 @@
 package ru.sber.finalproject.model;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ForeignKey;
@@ -24,25 +25,25 @@ import java.time.LocalDate;
 @Setter
 @ToString
 public class VisitorResearch extends GenericModel {
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinColumn(name = "visitor_id", nullable = false, foreignKey = @ForeignKey(name = "visitor_research_visitor_id_fkey"))
     private Visitor visitor;
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinColumn(name = "doctor_id", nullable = false, foreignKey = @ForeignKey(name = "visitor_research_doctor_id_fkey"))
     private Doctor doctor;
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinColumn(name = "laboratory_assistant_id", nullable = false, foreignKey = @ForeignKey(name = "visitor_research_laboratory_assistant_id_fkey"))
     private LaboratoryAssistant laboratoryAssistant;
 
     @Column(name = "date_of_referral_for_research", nullable = false)
     private LocalDate dateOfReferralForResearch;
 
-    @Column(name = "date_of_study", nullable = false)
-    private LocalDate dateOfStudy;
+    @Column(name = "date_of_research", nullable = false)
+    private LocalDate dateOfResearch;
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinColumn(name = "med_types_of_research_id", nullable = false, foreignKey = @ForeignKey(name = "visitor_research_med_types_of_research_id_fkey"))
     private MedTypesOfResearch medTypesOfResearch;
 }

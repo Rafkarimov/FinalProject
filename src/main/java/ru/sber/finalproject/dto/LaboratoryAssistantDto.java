@@ -17,5 +17,4 @@ import java.util.Set;
 public class LaboratoryAssistantDto extends GenericDto {
     private Person person;
     private List<MedTypesOfResearch> medTypesOfResearchList;
-
 }

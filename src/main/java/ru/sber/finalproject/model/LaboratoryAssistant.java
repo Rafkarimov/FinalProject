@@ -14,7 +14,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -25,7 +24,7 @@ import java.util.List;
 @Getter
 @Setter
 public class LaboratoryAssistant extends GenericModel {
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Person person;
     @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinTable(name = "laboratory_assistant_med_types",
@@ -33,12 +32,5 @@ public class LaboratoryAssistant extends GenericModel {
             foreignKey = @ForeignKey(name = "laboratory_assistant_med_types_laboratory_assistant_id_fkey"),
             inverseJoinColumns = @JoinColumn(name = "med_types_of_research_id"),
             inverseForeignKey = @ForeignKey(name = "laboratory_assistant_med_types_med_types_of_research_id_fkey"))
-    private List<MedTypesOfResearch> medTypesOfResearchList = new ArrayList<>();
-
-    @Override
-    public String toString() {
-        return getClass().getSimpleName() + "(" +
-                "modifiedBy = " + getModifiedBy() + ", " +
-                "modifiedWhen = " + getModifiedWhen() + ")";
-    }
+    private List<MedTypesOfResearch> medTypesOfResearchList;
 }

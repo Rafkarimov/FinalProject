@@ -9,7 +9,7 @@ import ru.sber.finalproject.service.VisitorResearchService;
 
 @RestController
 @RequestMapping("/visitor-research")
-@Tag(name = "Исследования пациентов", description = "Контроллер для работы исследованиями пациентов")
+@Tag(name = "Исследования пациентов", description = "Контроллер для работы с исследованиями пациентов")
 public class VisitorResearchController extends GenericController<VisitorResearch, VisitorResearchDto> {
     private final VisitorResearchService visitorResearchService;
 

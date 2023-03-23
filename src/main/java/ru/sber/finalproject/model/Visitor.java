@@ -20,6 +20,6 @@ import lombok.ToString;
 @Setter
 @ToString
 public class Visitor extends GenericModel {
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Person person;
 }

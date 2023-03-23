@@ -28,6 +28,9 @@ values ('1', 'Терапевт',
         'Admin', now(), 'Admin', now()),
        ('10', 'Онколог',
         'специалист, изучающий опухоли, их причины и условия происхождения и патогенез [развитие заболевания — прим. ред.], методы профилактики и лечения',
+        'Admin', now(), 'Admin', now()),
+       ('11', 'Администратор',
+        'администратор БД',
         'Admin', now(), 'Admin', now());
 
 insert into authority(id, name, created_by, created_when, modified_by, modified_when)
@@ -36,14 +39,6 @@ values ('1', 'Администратор',
        ('2', 'Медицинский работник',
         'Admin', now(), 'Admin', now()),
        ('3', 'Пациент',
-        'Admin', now(), 'Admin', now());
-
-insert into reception_status(id, status, created_by, created_when, modified_by, modified_when)
-values ('1', 'Открыто',
-        'Admin', now(), 'Admin', now()),
-       ('2', 'Закрыто',
-        'Admin', now(), 'Admin', now()),
-       ('3', 'В процессе',
         'Admin', now(), 'Admin', now());
 
 insert into person(login, password, last_name, first_name, middle_name, birth_date, phone, email, snils, created_by,
@@ -134,7 +129,8 @@ values ('Laborant2003', 'Delay2003*', 'Потапова', 'Светлана', '�
         'Admin', now(), 'Admin', now());
 
 insert into chief_doctor(person_id, med_specialization_id, created_by, created_when, modified_by, modified_when)
-values (1, 5, 'Admin', now(), 'Admin', now());
+values (1, 5, 'Admin', now(), 'Admin', now()),
+       (11, 11, 'Admin', now(), 'Admin', now());
 insert into doctor(person_id, med_specialization_id, created_by, created_when, modified_by, modified_when)
 values (2, 1, 'Admin', now(), 'Admin', now()),
        (3, 2, 'Admin', now(), 'Admin', now()),
@@ -218,5 +214,57 @@ values (1, 1),
        (3, 3),
        (4, 4),
        (5, 5);
+
+insert into visitor_research(visitor_id, doctor_id, laboratory_assistant_id, date_of_referral_for_research,
+                             date_of_research, med_types_of_research_id, created_by, created_when, modified_by,
+                             modified_when)
+values (1, 1, 1, now() - interval '72h', now(), 1  ,'Admin', now(), 'Admin', now()),
+       (2, 2, 2, now() - interval '72h', now(), 2  ,'Admin', now(), 'Admin', now()),
+       (3, 3, 3, now() - interval '72h', now(), 3  ,'Admin', now(), 'Admin', now()),
+       (4, 4, 4, now() - interval '72h', now(), 4  ,'Admin', now(), 'Admin', now()),
+       (5, 5, 5, now() - interval '72h', now(), 5  ,'Admin', now(), 'Admin', now()),
+       (6, 6, 1, now() - interval '72h', now(), 1  ,'Admin', now(), 'Admin', now()),
+       (7, 7, 2, now() - interval '72h', now(), 2  ,'Admin', now(), 'Admin', now()),
+       (8, 8, 3, now() - interval '72h', now(), 3  ,'Admin', now(), 'Admin', now()),
+       (9, 9, 4, now() - interval '72h', now(), 4  ,'Admin', now(), 'Admin', now()),
+       (10, 1, 5, now() - interval '72h', now(), 5  ,'Admin', now(), 'Admin', now());
+
+--date of referral for research - дата направления на исследование
+--date of research
+--visitor research - исследование пациентов
+
+insert into reception_status(id, status, created_by, created_when, modified_by, modified_when)
+values ('1', 'Открыто',
+        'Admin', now(), 'Admin', now()),
+       ('2', 'Закрыто',
+        'Admin', now(), 'Admin', now()),
+       ('3', 'Отменен',
+        'Admin', now(), 'Admin', now());
+
+--reception date time - дата и время приема
+
+insert into reception(visitor_id, doctor_id, reception_date_time, reception_status_id, created_by, created_when, modified_by, modified_when)
+values ('1', 1, now() - interval '1h', 1,
+        'Admin', now(), 'Admin', now()),
+       ('2', 2, now() - interval '20d', 2,
+        'Admin', now(), 'Admin', now()),
+       ('3', '3', now() - interval '40d', 3,
+        'Admin', now(), 'Admin', now()),
+       ('4', '4', now() - interval '1h', 1,
+        'Admin', now(), 'Admin', now()),
+       ('5', '5', now() - interval '20d', 2,
+        'Admin', now(), 'Admin', now()),
+       ('6', '6', now() - interval '15d', 2,
+        'Admin', now(), 'Admin', now()),
+       ('7', '7', now() + interval '3d', 1,
+        'Admin', now(), 'Admin', now()),
+       ('8', '8', now() + interval '2d', 1,
+        'Admin', now(), 'Admin', now()),
+       ('10', '5', now() + interval '5d', 1,
+        'Admin', now(), 'Admin', now()),
+       ('9', '9', now() + interval '1d', 1,
+        'Admin', now(), 'Admin', now());
+
+
 
 

@@ -23,10 +23,10 @@ import lombok.ToString;
 @Setter
 @ToString
 public class Doctor extends GenericModel {
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Person person;
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinColumn(name = "med_specialization_id", nullable = false, foreignKey = @ForeignKey(name = "doctor_med_specialization_id_fkey"))
     private MedSpecialization medSpecialization;
 }

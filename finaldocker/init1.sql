@@ -173,7 +173,7 @@ CREATE TABLE visitor_research
     doctor_id                     BIGINT       NOT NULL,
     laboratory_assistant_id       BIGINT       NOT NULL,
     date_of_referral_for_research DATE         NOT NULL,
-    date_of_study                 DATE         NOT NULL,
+    date_of_research                 DATE         NOT NULL,
     med_types_of_research_id      BIGINT       NOT NULL,
     created_by                    VARCHAR(100) NOT NULL,
     created_when                  TIMESTAMP    NOT NULL,

@@ -27,5 +27,70 @@
   "id": 6,
   "login": "string"
 }
+//добавляем исследование пациентов
+{
+  "id": null,
+  "visitor": {
+    "id": 1
+  },
+  "doctor": {
+    "id": 1
+  },
+  "laboratoryAssistant": {
+    "id": 1
+  },
+  "dateOfReferralForResearch": "2023-03-20",
+  "dateOfResearch": "2023-03-23",
+  "medTypesOfResearch": {
+    "id": 1
+  }
+}
+//апдейт исследование пациентов
+{
+  "id": 3,
+  "visitor": {
+    "id": 1
+  },
+  "doctor": {
+    "id": 1
+  },
+  "laboratoryAssistant": {
+    "id": 1
+  },
+  "dateOfReferralForResearch": "2023-03-21",
+  "dateOfResearch": "2023-03-23",
+  "medTypesOfResearch": {
+    "id": 1
+  }
+}
+
+//создание приема
+{
+  "id": null,
+  "visitor": {
+    "id": 1
+  },
+  "doctor": {
+    "id": 1
+  },
+  "receptionDateTime": "2023-03-23T18:26:50.007Z",
+  "receptionStatus": {
+    "id": 1
+  }
+}
+//апдейт приема
+{
+  "id": 1,
+  "visitor": {
+    "id": 1
+  },
+  "doctor": {
+    "id": 1
+  },
+  "receptionDateTime": "2023-03-20T18:26:50.007Z",
+  "receptionStatus": {
+    "id": 1
+  }
+}
 
 
