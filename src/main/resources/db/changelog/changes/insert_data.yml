@@ -1,0 +1,30 @@
+databaseChangeLog:
+  - changeSet:
+      id: '2'
+      author: Rafail
+      changes:
+#        - sql:
+#            dbms: 'postgresql'
+#            endDelimiter: \nGO
+#            splitStatements: true
+#            sql: ALTER SESSION SET NLS_DATE_FORMAT = 'DD.MM.YYYY'T'HH:mm:ss';
+#            stripComments: true
+        - loadData:
+            columns:
+              - column:
+                  header: birth_date
+                  name: birth_date
+                  type: DATE
+            encoding: UTF-8
+            file: ../data/data.csv
+            relativeToChangelogFile: true
+            separator: ;
+            tableName: person
+            usePreparedStatements: true
+        - loadData:
+            encoding: UTF-8
+            file: ../data/authority.csv
+            relativeToChangelogFile: true
+            separator: ;
+            tableName: authority
+            usePreparedStatements: true

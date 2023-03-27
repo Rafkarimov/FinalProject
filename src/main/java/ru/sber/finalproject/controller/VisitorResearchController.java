@@ -1,4 +1,4 @@
-package ru.sber.finalproject.cotroller;
+package ru.sber.finalproject.controller;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -12,9 +12,9 @@ services:
       - POSTGRES_USER=user
       - POSTGRES_PASSWORD=admin
     #      - POSTGRES_INITDB_ARGS=--locale=ru_RU.UTF-8 --lc-monetary=ru_RU.UTF-8
-    volumes:
+#    volumes:
       #      - local_pgdata:/var/lib/postgresql/data
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+#      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
 #volumes:
 #  local_pgdata:
 

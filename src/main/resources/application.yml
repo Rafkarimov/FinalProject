@@ -14,6 +14,11 @@ spring:
     url: jdbc:postgresql://localhost:5432/final_db
     username: user
     password: admin
+  liquibase:
+    enabled: true
+    drop-first: true
+    change-log: classpath:db/changelog/changelog-master.yml
+    default-schema: public
 #  sql:
 #    init:
 #      mode: always

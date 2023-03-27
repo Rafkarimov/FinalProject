@@ -1,4 +1,4 @@
-package ru.sber.finalproject.cotroller;
+package ru.sber.finalproject.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.extern.slf4j.Slf4j;
