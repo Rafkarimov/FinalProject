@@ -5,14 +5,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import ru.sber.finalproject.model.Authority;
-import ru.sber.finalproject.model.ChiefDoctor;
-import ru.sber.finalproject.model.Doctor;
-import ru.sber.finalproject.model.LaboratoryAssistant;
-import ru.sber.finalproject.model.Visitor;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Set;
 
 @Setter
 @Getter

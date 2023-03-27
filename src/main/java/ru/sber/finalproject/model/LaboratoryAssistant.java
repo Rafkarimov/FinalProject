@@ -15,7 +15,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @Table(name = "laboratory_assistant")
@@ -34,8 +34,8 @@ public class LaboratoryAssistant extends GenericModel {
             foreignKey = @ForeignKey(name = "laboratory_assistant_med_types_laboratory_assistant_id_fkey"),
             inverseJoinColumns = @JoinColumn(name = "med_types_of_research_id"),
             inverseForeignKey = @ForeignKey(name = "laboratory_assistant_med_types_med_types_of_research_id_fkey"))
-    private Set<MedTypesOfResearch> medTypesOfResearchSet;
+    private List<MedTypesOfResearch> medTypesOfResearchList;
 
     @OneToMany(mappedBy = "laboratoryAssistant", cascade = {CascadeType.MERGE, CascadeType.PERSIST})
-    private Set<VisitorResearch> visitorResearches;
+    private List<VisitorResearch> visitorResearchList;
 }

@@ -10,7 +10,7 @@ import ru.sber.finalproject.model.VisitorResearch;
 import ru.sber.finalproject.repository.LaboratoryAssistantRepository;
 import ru.sber.finalproject.repository.VisitorResearchRepository;
 
-import java.util.Set;
+import java.util.List;
 
 @Slf4j
 @Service
@@ -32,7 +32,7 @@ public class LaboratoryAssistantService extends GenericService<LaboratoryAssista
     @Transactional
     public void deleteById(Long id) {
         LaboratoryAssistant assistant = laboratoryAssistantRepository.findById(id).get();
-        Set<VisitorResearch> visitorResearches = assistant.getVisitorResearches();
+        List<VisitorResearch> visitorResearches = assistant.getVisitorResearchList();
         visitorResearchRepository.deleteAll(visitorResearches);
         laboratoryAssistantRepository.deleteById(id);
     }
