@@ -1,0 +1,4 @@
+person_id;med_specialization_id;created_by;created_when;modified_by;modified_when
+1;5;Admin;CURRENT_TIMESTAMP;Admin;CURRENT_TIMESTAMP
+11;11;Admin;CURRENT_TIMESTAMP;Admin;CURRENT_TIMESTAMP
+

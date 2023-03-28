@@ -1,0 +1,31 @@
+login;password;last_name;first_name;middle_name;birth_date;phone;email;snils;created_by;created_when;modified_by;modified_when
+Terapeft;Terapeft2023*;Иванов;Иван;Иванович;1990-01-01;+7-933-111-22-33;terapeft2023@yandex.ru;123-321-123 55;Admin;CURRENT_TIMESTAMP;Admin;CURRENT_TIMESTAMP
+Virusolog;Virusolog2023*;Петров;Иван;Кириякович;1984-02-05;+7-922-131-11-77;virusolog2023@yandex.ru;321-555-666 44;Admin;CURRENT_TIMESTAMP;Admin;CURRENT_TIMESTAMP
+Ginekolog;Ginekolog2023*;Тополева;Раиса;Степановна;1976-03-10;+7-911-555-22-11;ginekolog2023@yandex.ru;444-036-413 11;Admin;CURRENT_TIMESTAMP;Admin;CURRENT_TIMESTAMP
+Dietolog;Dietolog2023*;Соболева;Мария;Федоровна;1971-07-01;+7-911-111-32-44;dietolog2023@yandex.ru;123-999-111 22;Admin;CURRENT_TIMESTAMP;Admin;CURRENT_TIMESTAMP
+Kardiolog;Kardiolog2023*;Степанов;Николай;Петрович;1990-10-07;+7-911-222-33-11;kardiolog2023@yandex.ru;105-111-321 11;Admin;CURRENT_TIMESTAMP;Admin;CURRENT_TIMESTAMP
+Logoped;Logoped2023*;Соболев;Михаил;Анатольевич;1989-01-02;+7-911-751-11-33;logoped2023@yandex.ru;111-333-444 22;Admin;CURRENT_TIMESTAMP;Admin;CURRENT_TIMESTAMP
+Mammolog;Mammolog2023*;Киприянова;Любовь;Анатольевна;1975-05-05;+7-911-222-75-13;mammolog2023@yandex.ru;521-412-321 33;Admin;CURRENT_TIMESTAMP;Admin;CURRENT_TIMESTAMP
+Narkolog;Narkolog2023*;Ползунова;Нина;Ивановна;1980-02-07;+7-911-456-74-33;narkolog2023@yandex.ru;645-212-123 22;Admin;CURRENT_TIMESTAMP;Admin;CURRENT_TIMESTAMP
+Nevropatolog;Nevropatolog2023*;Копылова;Светлана;Ивановна;1961-12-09;+7-911-212-11-33;nevropatolog2023@yandex.ru;123-444-213 22;Admin;CURRENT_TIMESTAMP;Admin;CURRENT_TIMESTAMP
+Onkolog;Onkolog2023*;Потапов;Анатолий;Иванович;1972-11-12;+7-911-421-22-44;onkolog2023@yandex.ru;135-444-132 11;Admin;CURRENT_TIMESTAMP;Admin;CURRENT_TIMESTAMP
+
+Rafail;Rafail2023*;Каримов;Рафаиль;Римович;1985-01-09;+7-900-000-00-00;Raf_2003@mail.ru;111-444-222 11;Admin;CURRENT_TIMESTAMP;Admin;CURRENT_TIMESTAMP
+
+User2003;Delay2003*;Иванов;Петр;Перович;1965-12-05;+7-911-513-11-22;delay2003@mail.ru;213-222-111 22;Admin;CURRENT_TIMESTAMP;Admin;CURRENT_TIMESTAMP
+User2004;Delay2003*;Свиридова;Антонина;Леопольдовна;1955-03-05;+7-911-777-22-33;delay2004@mail.ru;123-123-123 22;Admin;CURRENT_TIMESTAMP;Admin;CURRENT_TIMESTAMP
+User2005;Delay2003*;Загинайло;Марина;Львовна;1970-12-06;+7-911-135-12-11;delay2005@mail.ru;123-123-215 77;Admin;CURRENT_TIMESTAMP;Admin;CURRENT_TIMESTAMP
+User2006;Delay2003*;Петров;Степан;Иванович;1955-03-05;+7-911-777-22-33;delay2006@mail.ru;123-182-777 65;Admin;CURRENT_TIMESTAMP;Admin;CURRENT_TIMESTAMP
+User2007;Delay2003*;Милорадов;Илларион;Анатольевич;1990-10-12;+7-911-784-11-22;delay2007@mail.ru;122-175-112 50;Admin;CURRENT_TIMESTAMP;Admin;CURRENT_TIMESTAMP
+User2008;Delay2003*;Миронов;Иван;Петрович;1975-04-06;+7-911-682-12-55;delay2008@mail.ru;131-123-155 22;Admin;CURRENT_TIMESTAMP;Admin;CURRENT_TIMESTAMP
+User2009;Delay2003*;Кудрешова;Марина;Ивановна;1970-10-12;+7-911-311-11-33;delay2009@mail.ru;178-112-111 22;Admin;CURRENT_TIMESTAMP;Admin;CURRENT_TIMESTAMP
+User2010;Delay2003*;Аппалонова;Светлана;Николаевна;1970-05-05;+7-911-124-22-33;delay2010@mail.ru;256-213-123 22;Admin;CURRENT_TIMESTAMP;Admin;CURRENT_TIMESTAMP
+User2011;Delay2003*;Попова;Светлана;Рудольфовна;1980-05-12;+7-911-231-23-33;delay2011@mail.ru;321-555-756 22;Admin;CURRENT_TIMESTAMP;Admin;CURRENT_TIMESTAMP
+User2004;Delay2003*;Кислицкая;Венера;Степановна;1981-12-05;+7-911-777-22-33;delay2012@mail.ru;123-123-759 22;Admin;CURRENT_TIMESTAMP;Admin;CURRENT_TIMESTAMP
+
+Laborant2003;Delay2003*;Потапова;Светлана;Ивановна;1978-10-06;+7-911-231-13-12;laborant2003@mail.ru;124-135-223 11;Admin;CURRENT_TIMESTAMP;Admin;CURRENT_TIMESTAMP
+Laborant2004;Delay2003*;Самсонова;Ирина;Васильевна;1955-11-07;+7-911-750-22-78;laborant2004@mail.ru;123-175-131 22;Admin;CURRENT_TIMESTAMP;Admin;CURRENT_TIMESTAMP
+Laborant2005;Delay2003*;Петрова;Мария;Ивановна;1978-12-08;+7-911-751-33-44;laborant2005@mail.ru;123-175-131 22;Admin;CURRENT_TIMESTAMP;Admin;CURRENT_TIMESTAMP
+Laborant2006;Delay2003*;Пунцева;Валерия;Витальевна;1990-01-09;+7-911-005-11-22;laborant2006@mail.ru;124-222-059 12;Admin;CURRENT_TIMESTAMP;Admin;CURRENT_TIMESTAMP
+Laborant2007;Delay2003*;Румянцев;Петр;Мелентьевич;1995-02-09;+7-911-015-22-08;laborant2007@mail.ru;125-213-078 52;Admin;CURRENT_TIMESTAMP;Admin;CURRENT_TIMESTAMP
+

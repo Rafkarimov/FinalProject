@@ -1,0 +1,6 @@
+id;status;created_by;created_when;modified_by;modified_when
+1;Открыто;Admin;CURRENT_TIMESTAMP;Admin;CURRENT_TIMESTAMP
+2;Ждет приема;Admin;CURRENT_TIMESTAMP;Admin;CURRENT_TIMESTAMP
+3;Закрыто;Admin;CURRENT_TIMESTAMP;Admin;CURRENT_TIMESTAMP
+4;Отменен;Admin;CURRENT_TIMESTAMP;Admin;CURRENT_TIMESTAMP
+5;Прием окончен;Admin;CURRENT_TIMESTAMP;Admin;CURRENT_TIMESTAMP

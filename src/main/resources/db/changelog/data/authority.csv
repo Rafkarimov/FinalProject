@@ -1,2 +1,4 @@
 id;name;created_by;created_when;modified_by;modified_when
 1;Администратор;Admin;CURRENT_TIMESTAMP;Admin;CURRENT_TIMESTAMP
+2;Медицинский работник;Admin;CURRENT_TIMESTAMP;Admin;CURRENT_TIMESTAMP
+3;Пациент;Admin;CURRENT_TIMESTAMP;Admin;CURRENT_TIMESTAMP

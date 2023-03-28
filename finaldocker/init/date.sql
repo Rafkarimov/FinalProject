@@ -236,10 +236,15 @@ values (1, 1, 1, now() - interval '72h', now(), 1  ,'Admin', now(), 'Admin', now
 insert into reception_status(id, status, created_by, created_when, modified_by, modified_when)
 values ('1', 'Открыто',
         'Admin', now(), 'Admin', now()),
-       ('2', 'Закрыто',
+       ('2', 'Ждет приема',
         'Admin', now(), 'Admin', now()),
-       ('3', 'Отменен',
+       ('3', 'Закрыто',
+        'Admin', now(), 'Admin', now()),
+       ('4', 'Отменен',
+        'Admin', now(), 'Admin', now()),
+       ('5', 'Прием окончен',
         'Admin', now(), 'Admin', now());
+
 
 --reception date time - дата и время приема
 

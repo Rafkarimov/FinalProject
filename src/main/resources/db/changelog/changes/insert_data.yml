@@ -3,20 +3,20 @@ databaseChangeLog:
       id: '2'
       author: Rafail
       changes:
-#        - sql:
-#            dbms: 'postgresql'
-#            endDelimiter: \nGO
-#            splitStatements: true
-#            sql: ALTER SESSION SET NLS_DATE_FORMAT = 'DD.MM.YYYY'T'HH:mm:ss';
-#            stripComments: true
+        #        - sql:
+        #            dbms: 'postgresql'
+        #            endDelimiter: \nGO
+        #            splitStatements: true
+        #            sql: ALTER SESSION SET NLS_DATE_FORMAT = 'DD.MM.YYYY'T'HH:mm:ss';
+        #            stripComments: true
         - loadData:
-            columns:
-              - column:
-                  header: birth_date
-                  name: birth_date
-                  type: DATE
+            #            columns:
+            #              - column:
+            #                  header: birth_date
+            #                  name: birth_date
+            #                  type: DATE
             encoding: UTF-8
-            file: ../data/data.csv
+            file: ../data/person.csv
             relativeToChangelogFile: true
             separator: ;
             tableName: person
@@ -27,4 +27,81 @@ databaseChangeLog:
             relativeToChangelogFile: true
             separator: ;
             tableName: authority
+            usePreparedStatements: true
+        - loadData:
+            encoding: UTF-8
+            file: ../data/person_authority.csv
+            relativeToChangelogFile: true
+            separator: ;
+            tableName: person_authority
+            usePreparedStatements: true
+        - loadData:
+            encoding: UTF-8
+            file: ../data/med_specialization.csv
+            relativeToChangelogFile: true
+            separator: ;
+            tableName: med_specialization
+            usePreparedStatements: true
+        - loadData:
+            encoding: UTF-8
+            file: ../data/chief_doctor.csv
+            relativeToChangelogFile: true
+            separator: ;
+            tableName: chief_doctor
+            usePreparedStatements: true
+        - loadData:
+            encoding: UTF-8
+            file: ../data/doctor.csv
+            relativeToChangelogFile: true
+            separator: ;
+            tableName: doctor
+            usePreparedStatements: true
+        - loadData:
+            encoding: UTF-8
+            file: ../data/visitor.csv
+            relativeToChangelogFile: true
+            separator: ;
+            tableName: visitor
+            usePreparedStatements: true
+        - loadData:
+            encoding: UTF-8
+            file: ../data/laboratory_assistant.csv
+            relativeToChangelogFile: true
+            separator: ;
+            tableName: laboratory_assistant
+            usePreparedStatements: true
+        - loadData:
+            encoding: UTF-8
+            file: ../data/med_types_of_research.csv
+            relativeToChangelogFile: true
+            separator: ;
+            tableName: med_types_of_research
+            usePreparedStatements: true
+        - loadData:
+            encoding: UTF-8
+            file: ../data/laboratory_assistant_med_types.csv
+            relativeToChangelogFile: true
+            separator: ;
+            tableName: laboratory_assistant_med_types
+            usePreparedStatements: true
+        - loadData:
+            encoding: UTF-8
+            file: ../data/visitor_research.csv
+            relativeToChangelogFile: true
+            separator: ;
+            tableName: visitor_research
+            usePreparedStatements: true
+        - loadData:
+            encoding: UTF-8
+            file: ../data/reception_status.csv
+            relativeToChangelogFile: true
+            separator: ;
+            tableName: reception_status
+            usePreparedStatements: true
+        - loadData:
+            encoding: UTF-8
+            file: ../data/reception.csv
+            relativeToChangelogFile: true
+            separator: ;
+            tableName: reception
             usePreparedStatements: true
