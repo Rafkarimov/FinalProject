@@ -1,8 +1,8 @@
 databaseChangeLog:
   - include:
-      file: db/changelog/changes/create_tables.sql
+      file: db/changelog/changes/20230329214400_create_tables.sql
   - include:
-      file: db/changelog/changes/insert_data.yml
+      file: db/changelog/changes/20230329214500_insert_data.yml
 
 #databaseChangeLog:
 #  - includeAll:

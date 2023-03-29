@@ -3,22 +3,12 @@ databaseChangeLog:
       id: '2'
       author: Rafail
       changes:
-        #        - sql:
-        #            dbms: 'postgresql'
-        #            endDelimiter: \nGO
-        #            splitStatements: true
-        #            sql: ALTER SESSION SET NLS_DATE_FORMAT = 'DD.MM.YYYY'T'HH:mm:ss';
-        #            stripComments: true
         - loadData:
-            #            columns:
-            #              - column:
-            #                  header: birth_date
-            #                  name: birth_date
-            #                  type: DATE
             encoding: UTF-8
             file: ../data/person.csv
             relativeToChangelogFile: true
             separator: ;
+            quotchar: "'"
             tableName: person
             usePreparedStatements: true
         - loadData:
@@ -26,6 +16,7 @@ databaseChangeLog:
             file: ../data/authority.csv
             relativeToChangelogFile: true
             separator: ;
+            quotchar: "'"
             tableName: authority
             usePreparedStatements: true
         - loadData:
@@ -33,13 +24,20 @@ databaseChangeLog:
             file: ../data/person_authority.csv
             relativeToChangelogFile: true
             separator: ;
+            quotchar: "'"
             tableName: person_authority
             usePreparedStatements: true
         - loadData:
+            columns:
+              - column:
+                  header: description
+                  name: description
+                  type: string
             encoding: UTF-8
             file: ../data/med_specialization.csv
             relativeToChangelogFile: true
             separator: ;
+            quotchar: "'"
             tableName: med_specialization
             usePreparedStatements: true
         - loadData:
@@ -47,6 +45,7 @@ databaseChangeLog:
             file: ../data/chief_doctor.csv
             relativeToChangelogFile: true
             separator: ;
+            quotchar: "'"
             tableName: chief_doctor
             usePreparedStatements: true
         - loadData:
@@ -54,6 +53,7 @@ databaseChangeLog:
             file: ../data/doctor.csv
             relativeToChangelogFile: true
             separator: ;
+            quotchar: "'"
             tableName: doctor
             usePreparedStatements: true
         - loadData:
@@ -61,6 +61,7 @@ databaseChangeLog:
             file: ../data/visitor.csv
             relativeToChangelogFile: true
             separator: ;
+            quotchar: "'"
             tableName: visitor
             usePreparedStatements: true
         - loadData:
@@ -68,13 +69,20 @@ databaseChangeLog:
             file: ../data/laboratory_assistant.csv
             relativeToChangelogFile: true
             separator: ;
+            quotchar: "'"
             tableName: laboratory_assistant
             usePreparedStatements: true
         - loadData:
+            columns:
+              - column:
+                  header: description
+                  name: description
+                  type: string
             encoding: UTF-8
             file: ../data/med_types_of_research.csv
             relativeToChangelogFile: true
             separator: ;
+            quotchar: "'"
             tableName: med_types_of_research
             usePreparedStatements: true
         - loadData:
@@ -82,6 +90,7 @@ databaseChangeLog:
             file: ../data/laboratory_assistant_med_types.csv
             relativeToChangelogFile: true
             separator: ;
+            quotchar: "'"
             tableName: laboratory_assistant_med_types
             usePreparedStatements: true
         - loadData:
@@ -89,6 +98,7 @@ databaseChangeLog:
             file: ../data/visitor_research.csv
             relativeToChangelogFile: true
             separator: ;
+            quotchar: "'"
             tableName: visitor_research
             usePreparedStatements: true
         - loadData:
@@ -96,6 +106,7 @@ databaseChangeLog:
             file: ../data/reception_status.csv
             relativeToChangelogFile: true
             separator: ;
+            quotchar: "'"
             tableName: reception_status
             usePreparedStatements: true
         - loadData:
@@ -103,5 +114,18 @@ databaseChangeLog:
             file: ../data/reception.csv
             relativeToChangelogFile: true
             separator: ;
+            quotchar: "'"
             tableName: reception
             usePreparedStatements: true
+#        - sql:
+#            dbms: 'postgresql'
+#            endDelimiter: \nGO
+#            splitStatements: true
+#            sql: ALTER SESSION SET NLS_DATE_FORMAT = 'DD.MM.YYYY'T'HH:mm:ss';
+#            stripComments: true
+#        - loadData:
+#            columns:
+#              - column:
+#                  header: birth_date
+#                  name: birth_date
+#                  type: DATE
