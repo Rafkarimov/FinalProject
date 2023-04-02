@@ -1,8 +1,10 @@
 databaseChangeLog:
   - include:
-      file: db/changelog/changes/20230329214400_create_tables.sql
+      file: db/changelog/changes/20230402120000_create_tables.sql
   - include:
-      file: db/changelog/changes/20230329214500_insert_data.yml
+      file: db/changelog/changes/20230402130000_insert_person_data.sql
+  - include:
+      file: db/changelog/changes/20230402140000_insert_data.yml
 
 #databaseChangeLog:
 #  - includeAll:

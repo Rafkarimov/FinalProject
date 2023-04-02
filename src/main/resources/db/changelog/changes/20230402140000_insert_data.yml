@@ -3,14 +3,20 @@ databaseChangeLog:
       id: '2'
       author: Rafail
       changes:
-        - loadData:
-            encoding: UTF-8
-            file: ../data/person.csv
-            relativeToChangelogFile: true
-            separator: ;
-            quotchar: "'"
-            tableName: person
-            usePreparedStatements: true
+#        - loadData:
+#            encoding: UTF-8
+#            file: ../data/person.csv
+#            relativeToChangelogFile: true
+#            separator: ;
+#            quotchar: "'"
+#            tableName: person
+#            usePreparedStatements: true
+#            columns:
+#                - column:
+#                      header: password
+#                      name: password
+#                      type: string
+#                      defaultValueComputed: "crypt('login', gen_salt('bf', 10))"
         - loadData:
             encoding: UTF-8
             file: ../data/authority.csv

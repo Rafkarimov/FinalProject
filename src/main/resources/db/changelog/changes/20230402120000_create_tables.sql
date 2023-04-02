@@ -237,3 +237,23 @@ ALTER TABLE reception
     ADD CONSTRAINT reception_doctor_id_fkey FOREIGN KEY (doctor_id) REFERENCES doctor (id);
 ALTER TABLE reception
     ADD CONSTRAINT reception_reception_status_id_fkey FOREIGN KEY (reception_status_id) REFERENCES reception_status (id);
+
+CREATE EXTENSION IF NOT EXISTS pgcrypto;
+
+-- CREATE OR REPLACE FUNCTION password_update()
+--     RETURNS trigger
+--     LANGUAGE plpgsql
+--     SECURITY DEFINER
+-- AS
+-- $BODY$
+-- BEGIN
+--     new.password := crypt(new.password, gen_salt('bf', 10));
+--     RETURN new;
+-- END;
+-- $BODY$;
+
+-- CREATE TRIGGER insert_trigger
+--     BEFORE INSERT
+--     ON person
+--     FOR EACH ROW
+-- EXECUTE PROCEDURE password_update();

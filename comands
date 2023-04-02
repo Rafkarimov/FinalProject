@@ -6,3 +6,6 @@ npm run serve
 npm install --save bootstrap
 rmdir /s <name> - удаление каскадом папку
 npm install --save @popperjs/core --установка для бутстрап
+
+netstat -ano | findstr :<PORT> - проверить какой PID для зависшего порта
+taskkill //PID ... //F - убить PID
