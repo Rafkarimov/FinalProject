@@ -86,7 +86,7 @@ public class Person extends GenericModel {
 //    private Visitor visitor;
 
     @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
-    @JoinTable(name = "person_authority.csv",
+    @JoinTable(name = "person_authority",
             joinColumns = @JoinColumn(name = "person_id"),
             foreignKey = @ForeignKey(name = "person_authority_authority_id_fkey"),
             inverseJoinColumns = @JoinColumn(name = "authority_id"),

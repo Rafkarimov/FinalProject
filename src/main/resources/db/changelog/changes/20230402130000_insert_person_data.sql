@@ -1,3 +1,6 @@
+--liquibase formatted sql
+--changeset Rafail:2
+
 insert into person(login, password, last_name, first_name, middle_name, birth_date, phone, email, snils, created_by,
                    created_when, modified_by, modified_when)
 values ('Terapeft', crypt('Terapeft2023*', gen_salt('bf', 10)), 'Иванов', 'Иван', 'Иванович', '01.01.1990', '+7-933-111-22-33',
