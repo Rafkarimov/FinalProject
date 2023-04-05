@@ -1,5 +1,5 @@
 server:
-  port: 9090
+  port: 8080
 
 spring:
   jpa:
@@ -19,6 +19,9 @@ spring:
     drop-first: true
     change-log: classpath:db/changelog/changelog-master.yml
     default-schema: public
+  jackson:
+    serialization:
+      INDENT_OUTPUT: true
 #  sql:
 #    init:
 #      mode: always

@@ -35,7 +35,7 @@ public abstract class GenericController<E extends GenericModel, D extends Generi
     }
 
     @Operation(description = "Получить все записи", method = "getAll")
-    @GetMapping("/getAll")
+    @GetMapping("/get-all")
     public ResponseEntity<List<D>> getAll() {
         return ResponseEntity.ok(genericService.listAll());
     }

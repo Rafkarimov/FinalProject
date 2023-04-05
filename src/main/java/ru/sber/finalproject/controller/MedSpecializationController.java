@@ -8,7 +8,7 @@ import ru.sber.finalproject.model.MedSpecialization;
 import ru.sber.finalproject.service.MedSpecializationService;
 
 @RestController
-@RequestMapping("/med-specialization")
+@RequestMapping("/medspecialization")
 @Tag(name = "Медицинская специальность", description = "Контроллер для работы с медицинскими специальностями")
 public class MedSpecializationController extends GenericController<MedSpecialization, MedSpecializationDto> {
     private final MedSpecializationService medSpecializationService;
