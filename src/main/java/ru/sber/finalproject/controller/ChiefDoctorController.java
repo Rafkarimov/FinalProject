@@ -8,7 +8,7 @@ import ru.sber.finalproject.model.ChiefDoctor;
 import ru.sber.finalproject.service.ChiefDoctorService;
 
 @RestController
-@RequestMapping("/chief-doctor")
+@RequestMapping("/chiefdoctor")
 @Tag(name = "Главный врач", description = "Контроллер для главного врача")
 public class ChiefDoctorController extends GenericController<ChiefDoctor, ChiefDoctorDto> {
     private final ChiefDoctorService chiefDoctorService;

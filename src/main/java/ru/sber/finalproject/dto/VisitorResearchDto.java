@@ -16,10 +16,10 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 public class VisitorResearchDto extends GenericDto {
-    private Visitor visitor;
-    private Doctor doctor;
-    private LaboratoryAssistant laboratoryAssistant;
+    private VisitorDto visitor;
+    private DoctorDto doctor;
+    private LaboratoryAssistantDto laboratoryAssistant;
     private LocalDate dateOfReferralForResearch;
     private LocalDate dateOfResearch;
-    private MedTypesOfResearch medTypesOfResearch;
+    private MedTypesOfResearchDto medTypesOfResearch;
 }

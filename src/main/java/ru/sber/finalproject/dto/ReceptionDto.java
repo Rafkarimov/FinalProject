@@ -15,8 +15,8 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ReceptionDto extends GenericDto {
-    private Visitor visitor;
-    private Doctor doctor;
+    private VisitorDto visitor;
+    private DoctorDto doctor;
     private LocalDateTime receptionDateTime;
     private ReceptionStatus receptionStatus;
 }

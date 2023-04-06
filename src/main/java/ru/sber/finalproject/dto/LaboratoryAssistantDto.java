@@ -13,7 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class LaboratoryAssistantDto extends GenericDto {
-    private Person person;
+    private PersonDto person;
     private List<MedTypesOfResearchDto> medTypesOfResearchList;
     private List<VisitorResearchDto> visitorResearchList;
 }

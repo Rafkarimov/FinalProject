@@ -15,7 +15,6 @@ import java.util.List;
 @NoArgsConstructor
 public class PersonDto extends GenericDto {
     private String login;
-    private String password;
     private String lastName;
     private String firstName;
     private String middleName;

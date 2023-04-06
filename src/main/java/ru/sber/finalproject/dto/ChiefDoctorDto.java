@@ -12,6 +12,6 @@ import ru.sber.finalproject.model.Person;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ChiefDoctorDto extends GenericDto {
-    private Person person;
-    private MedSpecialization medSpecialization;
+    private PersonDto person;
+    private MedSpecializationDto medSpecialization;
 }

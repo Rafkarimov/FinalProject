@@ -11,5 +11,5 @@ import ru.sber.finalproject.model.Person;
 @AllArgsConstructor
 @NoArgsConstructor
 public class VisitorDto extends GenericDto {
-    private Person person;
+    private PersonDto person;
 }
