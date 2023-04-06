@@ -132,10 +132,10 @@ insert into chief_doctor(person_id, med_specialization_id, created_by, created_w
 values (1, 5, 'Admin', now(), 'Admin', now()),
        (11, 11, 'Admin', now(), 'Admin', now());
 insert into doctor(person_id, med_specialization_id, created_by, created_when, modified_by, modified_when)
-values (2, 1, 'Admin', now(), 'Admin', now()),
-       (3, 2, 'Admin', now(), 'Admin', now()),
-       (4, 3, 'Admin', now(), 'Admin', now()),
-       (5, 4, 'Admin', now(), 'Admin', now()),
+values (1, 1, 'Admin', now(), 'Admin', now()),
+       (2, 2, 'Admin', now(), 'Admin', now()),
+       (3, 3, 'Admin', now(), 'Admin', now()),
+       (4, 4, 'Admin', now(), 'Admin', now()),
        (6, 6, 'Admin', now(), 'Admin', now()),
        (7, 7, 'Admin', now(), 'Admin', now()),
        (8, 8, 'Admin', now(), 'Admin', now()),
