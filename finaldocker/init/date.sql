@@ -34,11 +34,11 @@ values ('1', 'Терапевт',
         'Admin', now(), 'Admin', now());
 
 insert into authority(id, name, created_by, created_when, modified_by, modified_when)
-values ('1', 'Администратор',
+values ('1', 'ROLE_ADMIN',
         'Admin', now(), 'Admin', now()),
-       ('2', 'Медицинский работник',
+       ('2', 'ROLE_MED',
         'Admin', now(), 'Admin', now()),
-       ('3', 'Пациент',
+       ('3', 'ROLE_VISITOR',
         'Admin', now(), 'Admin', now());
 
 insert into person(login, password, last_name, first_name, middle_name, birth_date, phone, email, snils, created_by,
