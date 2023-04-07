@@ -8,7 +8,7 @@ import ru.sber.finalproject.model.LaboratoryAssistant;
 import ru.sber.finalproject.service.LaboratoryAssistantService;
 
 @RestController
-@RequestMapping("/laboratory-assistant")
+@RequestMapping("/laboratoryassistant")
 @Tag(name = "Лаборант", description = "Контроллер для лаборанта")
 public class LaboratoryAssistantController extends GenericController<LaboratoryAssistant, LaboratoryAssistantDto> {
     private final LaboratoryAssistantService laboratoryAssistantService;

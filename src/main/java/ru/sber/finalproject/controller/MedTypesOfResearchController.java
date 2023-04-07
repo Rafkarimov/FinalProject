@@ -8,7 +8,7 @@ import ru.sber.finalproject.model.MedTypesOfResearch;
 import ru.sber.finalproject.service.MedTypesOfResearchService;
 
 @RestController
-@RequestMapping("/med-types-of-research")
+@RequestMapping("/medtypesofresearch")
 @Tag(name = "Виды медицинских исследований", description = "Контроллер для работы с видами медицинских исследований")
 public class MedTypesOfResearchController extends GenericController<MedTypesOfResearch, MedTypesOfResearchDto> {
     private final MedTypesOfResearchService medTypesOfResearchService;
