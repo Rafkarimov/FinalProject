@@ -16,7 +16,7 @@ spring:
     password: admin
   liquibase:
     enabled: true
-    drop-first: true
+    drop-first: false
     change-log: classpath:db/changelog/changelog-master.yml
     default-schema: public
   jackson:
