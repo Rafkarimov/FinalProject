@@ -29,13 +29,13 @@ public class LaboratoryAssistant extends GenericModel {
     private Person person;
 
     @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
-    @JoinTable(name = "laboratory_assistant_med_types.csv",
+    @JoinTable(name = "laboratory_assistant_med_types",
             joinColumns = @JoinColumn(name = "laboratory_assistant_id"),
             foreignKey = @ForeignKey(name = "laboratory_assistant_med_types_laboratory_assistant_id_fkey"),
             inverseJoinColumns = @JoinColumn(name = "med_types_of_research_id"),
             inverseForeignKey = @ForeignKey(name = "laboratory_assistant_med_types_med_types_of_research_id_fkey"))
-    private List<MedTypesOfResearch> medTypesOfResearchList;
+    private List<MedTypesOfResearch> medTypesOfResearch;
 
-    @OneToMany(mappedBy = "laboratoryAssistant", cascade = {CascadeType.MERGE, CascadeType.PERSIST})
-    private List<VisitorResearch> visitorResearchList;
+//    @OneToMany(mappedBy = "laboratoryAssistant", cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+//    private List<VisitorResearch> visitorResearchList;
 }

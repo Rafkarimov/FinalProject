@@ -14,6 +14,6 @@ import java.util.List;
 @NoArgsConstructor
 public class LaboratoryAssistantDto extends GenericDto {
     private PersonDto person;
-    private List<MedTypesOfResearchDto> medTypesOfResearchList;
-    private List<VisitorResearchDto> visitorResearchList;
+    private List<MedTypesOfResearchDto> medTypesOfResearch;
+//    private List<VisitorResearchDto> visitorResearchList;
 }

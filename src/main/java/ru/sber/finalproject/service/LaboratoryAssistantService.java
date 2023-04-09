@@ -31,9 +31,9 @@ public class LaboratoryAssistantService extends GenericService<LaboratoryAssista
     @Override
     @Transactional
     public void deleteById(Long id) {
-        LaboratoryAssistant assistant = laboratoryAssistantRepository.findById(id).get();
-        List<VisitorResearch> visitorResearches = assistant.getVisitorResearchList();
-        visitorResearchRepository.deleteAll(visitorResearches);
+//        LaboratoryAssistant assistant = laboratoryAssistantRepository.findById(id).get();
+//        List<VisitorResearch> visitorResearches = assistant.getVisitorResearchList();
+//        visitorResearchRepository.deleteAll(visitorResearches);
         laboratoryAssistantRepository.deleteById(id);
     }
 }

@@ -14,7 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PersonDto extends GenericDto {
-    private String login;
+//    private String login;
     private String lastName;
     private String firstName;
     private String middleName;
@@ -27,5 +27,4 @@ public class PersonDto extends GenericDto {
 //    private LaboratoryAssistant laboratoryAssistant;
 //    private Visitor visitor;
     private List<Authority> authorities;
-
 }
