@@ -18,5 +18,5 @@ public class ReceptionDto extends GenericDto {
     private VisitorDto visitor;
     private DoctorDto doctor;
     private LocalDateTime receptionDateTime;
-    private ReceptionStatus receptionStatus;
+    private ReceptionStatusDto receptionStatus;
 }
