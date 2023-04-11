@@ -234,19 +234,31 @@ values (1, 1),
        (4, 4),
        (5, 5);
 
+insert into research_status(id, status, created_by, created_when, modified_by, modified_when)
+values ('1', 'Открыто для записи',
+        'Admin', now(), 'Admin', now()),
+       ('2', 'Проводится исследование',
+        'Admin', now(), 'Admin', now()),
+       ('3', 'Закрыто исследование',
+        'Admin', now(), 'Admin', now()),
+       ('4', 'Исследование отменено',
+        'Admin', now(), 'Admin', now()),
+       ('5', 'Получен результат',
+        'Admin', now(), 'Admin', now());
+
 insert into visitor_research(visitor_id, doctor_id, laboratory_assistant_id, date_of_referral_for_research,
-                             date_of_research, med_types_of_research_id, created_by, created_when, modified_by,
-                             modified_when)
-values (1, 1, 1, now() - interval '72h', now(), 1, 'Admin', now(), 'Admin', now()),
-       (2, 2, 2, now() - interval '72h', now(), 2, 'Admin', now(), 'Admin', now()),
-       (3, 3, 3, now() - interval '72h', now(), 3, 'Admin', now(), 'Admin', now()),
-       (4, 4, 4, now() - interval '72h', now(), 4, 'Admin', now(), 'Admin', now()),
-       (5, 5, 5, now() - interval '72h', now(), 5, 'Admin', now(), 'Admin', now()),
-       (6, 6, 1, now() - interval '72h', now(), 1, 'Admin', now(), 'Admin', now()),
-       (7, 7, 2, now() - interval '72h', now(), 2, 'Admin', now(), 'Admin', now()),
-       (8, 8, 3, now() - interval '72h', now(), 3, 'Admin', now(), 'Admin', now()),
-       (9, 9, 4, now() - interval '72h', now(), 4, 'Admin', now(), 'Admin', now()),
-       (10, 1, 5, now() - interval '72h', now(), 5, 'Admin', now(), 'Admin', now());
+                             date_of_research, med_types_of_research_id, research_status_id, created_by, created_when,
+                             modified_by, modified_when)
+values (1, 1, 1, now() - interval '72h', now(), 1, 5, 'Admin', now(), 'Admin', now()),
+       (2, 2, 2, now() - interval '72h', now(), 2, 5, 'Admin', now(), 'Admin', now()),
+       (3, 3, 3, now() - interval '72h', now(), 3, 5, 'Admin', now(), 'Admin', now()),
+       (4, 4, 4, now() - interval '72h', now(), 4, 5, 'Admin', now(), 'Admin', now()),
+       (5, 5, 5, now() - interval '72h', now(), 5, 5, 'Admin', now(), 'Admin', now()),
+       (6, 6, 1, now() - interval '72h', now(), 1, 5, 'Admin', now(), 'Admin', now()),
+       (7, 7, 2, now() - interval '72h', now(), 2, 5, 'Admin', now(), 'Admin', now()),
+       (8, 8, 3, now() - interval '72h', now(), 3, 5, 'Admin', now(), 'Admin', now()),
+       (9, 9, 4, now() - interval '72h', now(), 4, 5, 'Admin', now(), 'Admin', now()),
+       (10, 1, 5, now() - interval '72h', now(), 5, 5, 'Admin', now(), 'Admin', now());
 
 --date of referral for research - дата направления на исследование
 --date of research

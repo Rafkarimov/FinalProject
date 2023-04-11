@@ -1,0 +1,6 @@
+id;status;created_by;created_when;modified_by;modified_when
+1;Открыто для записи;Admin;CURRENT_TIMESTAMP;Admin;CURRENT_TIMESTAMP
+2;Проводится исследование;Admin;CURRENT_TIMESTAMP;Admin;CURRENT_TIMESTAMP
+3;Закрыто исследование;Admin;CURRENT_TIMESTAMP;Admin;CURRENT_TIMESTAMP
+4;Исследование отменено;Admin;CURRENT_TIMESTAMP;Admin;CURRENT_TIMESTAMP
+5;Получен результат;Admin;CURRENT_TIMESTAMP;Admin;CURRENT_TIMESTAMP

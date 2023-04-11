@@ -3,20 +3,20 @@ databaseChangeLog:
       id: '3'
       author: Rafail
       changes:
-#        - loadData:
-#            encoding: UTF-8
-#            file: ../data/person.csv
-#            relativeToChangelogFile: true
-#            separator: ;
-#            quotchar: "'"
-#            tableName: person
-#            usePreparedStatements: true
-#            columns:
-#                - column:
-#                      header: password
-#                      name: password
-#                      type: string
-#                      defaultValueComputed: "crypt('login', gen_salt('bf', 10))"
+        #        - loadData:
+        #            encoding: UTF-8
+        #            file: ../data/person.csv
+        #            relativeToChangelogFile: true
+        #            separator: ;
+        #            quotchar: "'"
+        #            tableName: person
+        #            usePreparedStatements: true
+        #            columns:
+        #                - column:
+        #                      header: password
+        #                      name: password
+        #                      type: string
+        #                      defaultValueComputed: "crypt('login', gen_salt('bf', 10))"
         - loadData:
             encoding: UTF-8
             file: ../data/authority.csv
@@ -98,6 +98,14 @@ databaseChangeLog:
             separator: ;
             quotchar: "'"
             tableName: laboratory_assistant_med_types
+            usePreparedStatements: true
+        - loadData:
+            encoding: UTF-8
+            file: ../data/research_status.csv
+            relativeToChangelogFile: true
+            separator: ;
+            quotchar: "'"
+            tableName: research_status
             usePreparedStatements: true
         - loadData:
             encoding: UTF-8

@@ -46,4 +46,8 @@ public class VisitorResearch extends GenericModel {
     @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinColumn(name = "med_types_of_research_id", nullable = false, foreignKey = @ForeignKey(name = "visitor_research_med_types_of_research_id_fkey"))
     private MedTypesOfResearch medTypesOfResearch;
+
+    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @JoinColumn(name = "research_status_id", nullable = false, foreignKey = @ForeignKey(name = "visitor_research_research_status_id_fkey"))
+    private ResearchStatus researchStatus;
 }

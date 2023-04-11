@@ -7,6 +7,7 @@ import lombok.Setter;
 import ru.sber.finalproject.model.Doctor;
 import ru.sber.finalproject.model.LaboratoryAssistant;
 import ru.sber.finalproject.model.MedTypesOfResearch;
+import ru.sber.finalproject.model.ResearchStatus;
 import ru.sber.finalproject.model.Visitor;
 
 import java.time.LocalDate;
@@ -22,4 +23,5 @@ public class VisitorResearchDto extends GenericDto {
     private LocalDate dateOfReferralForResearch;
     private LocalDate dateOfResearch;
     private MedTypesOfResearchDto medTypesOfResearch;
+    private ResearchStatus researchStatus;
 }

@@ -169,6 +169,20 @@ ALTER TABLE laboratory_assistant_med_types
     ADD CONSTRAINT laboratory_assistant_med_types_med_types_of_research_id_fkey FOREIGN KEY (med_types_of_research_id) REFERENCES med_types_of_research (id);
 
 
+CREATE TABLE research_status
+(
+    id            INTEGER      NOT NULL,
+    status        VARCHAR(100) NOT NULL,
+    created_by    VARCHAR(100) NOT NULL,
+    created_when  TIMESTAMP    NOT NULL,
+    modified_by   VARCHAR(100) NOT NULL,
+    modified_when TIMESTAMP    NOT NULL
+);
+
+ALTER TABLE research_status
+    ADD CONSTRAINT research_status_pkey PRIMARY KEY (id);
+COMMENT ON TABLE "research_status" IS 'статус исследования';
+
 CREATE TABLE visitor_research
 (
     id                            BIGINT GENERATED ALWAYS AS IDENTITY,
@@ -178,6 +192,7 @@ CREATE TABLE visitor_research
     date_of_referral_for_research DATE         NOT NULL,
     date_of_research              DATE         NOT NULL,
     med_types_of_research_id      BIGINT       NOT NULL,
+    research_status_id            BIGINT,
     created_by                    VARCHAR(100) NOT NULL,
     created_when                  TIMESTAMP    NOT NULL,
     modified_by                   VARCHAR(100) NOT NULL,
@@ -196,6 +211,8 @@ ALTER TABLE visitor_research
     ADD CONSTRAINT visitor_research_laboratory_assistant_id_fkey FOREIGN KEY (laboratory_assistant_id) REFERENCES laboratory_assistant (id);
 ALTER TABLE visitor_research
     ADD CONSTRAINT visitor_research_med_types_of_research_id_fkey FOREIGN KEY (med_types_of_research_id) REFERENCES med_types_of_research (id);
+ALTER TABLE visitor_research
+    ADD CONSTRAINT visitor_research_research_status_id_fkey FOREIGN KEY (research_status_id) REFERENCES research_status (id);
 
 
 
