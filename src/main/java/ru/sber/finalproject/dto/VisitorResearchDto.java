@@ -23,5 +23,5 @@ public class VisitorResearchDto extends GenericDto {
     private LocalDate dateOfReferralForResearch;
     private LocalDate dateOfResearch;
     private MedTypesOfResearchDto medTypesOfResearch;
-    private ResearchStatus researchStatus;
+    private ResearchStatusDto researchStatus;
 }

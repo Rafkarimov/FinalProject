@@ -31,6 +31,9 @@ values ('1', 'Терапевт',
         'Admin', now(), 'Admin', now()),
        ('11', 'Администратор',
         'администратор БД',
+        'Admin', now(), 'Admin', now()),
+       ('12', 'Регистратор',
+        'осуществляет регистрацию пациентов лично, по телефону или через интернет',
         'Admin', now(), 'Admin', now());
 
 insert into authority(id, name, created_by, created_when, modified_by, modified_when)
@@ -43,6 +46,8 @@ values ('1', 'ROLE_ADMIN',
        ('4', 'ROLE_SYSTEM',
         'Admin', now(), 'Admin', now()),
        ('5', 'ROLE_ANONYMOUSUSER',
+        'Admin', now(), 'Admin', now()),
+       ('6', 'ROLE_REGISTRATION',
         'Admin', now(), 'Admin', now());
 
 insert into person(login, password, last_name, first_name, middle_name, birth_date, phone, email, snils, created_by,
@@ -146,6 +151,11 @@ values ('Laborant2003', crypt('Delay2003*', gen_salt('bf', 10)), 'Потапов
         '+7-911-015-22-08',
         'laborant2007@mail.ru', '125-213-078 52',
         'Admin', now(), 'Admin', now());
+insert into person(login, password, last_name, first_name, middle_name, birth_date, phone, email, snils, created_by,
+                   created_when, modified_by, modified_when)
+values ('Registrator2003', crypt('Registrator2003*', gen_salt('bf', 10)), 'Прыгунова', 'Раиса', 'Андреевна', '07.11.1985', '+7-912-011-11-00',
+        'кegistrator3@mail.ru', '133-835-335 12',
+        'Admin', now(), 'Admin', now());
 
 insert into chief_doctor(person_id, med_specialization_id, created_by, created_when, modified_by, modified_when)
 values (1, 5, 'Admin', now(), 'Admin', now()),
@@ -159,7 +169,8 @@ values (1, 1, 'Admin', now(), 'Admin', now()),
        (7, 7, 'Admin', now(), 'Admin', now()),
        (8, 8, 'Admin', now(), 'Admin', now()),
        (9, 9, 'Admin', now(), 'Admin', now()),
-       (10, 10, 'Admin', now(), 'Admin', now());
+       (10, 10, 'Admin', now(), 'Admin', now()),
+       (27, 12, 'Admin', now(), 'Admin', now());
 insert into visitor(person_id, created_by, created_when, modified_by, modified_when)
 values (12, 'Admin', now(), 'Admin', now()),
        (13, 'Admin', now(), 'Admin', now()),
@@ -258,7 +269,8 @@ values (1, 1, 1, now() - interval '72h', now(), 1, 5, 'Admin', now(), 'Admin', n
        (7, 7, 2, now() - interval '72h', now(), 2, 5, 'Admin', now(), 'Admin', now()),
        (8, 8, 3, now() - interval '72h', now(), 3, 5, 'Admin', now(), 'Admin', now()),
        (9, 9, 4, now() - interval '72h', now(), 4, 5, 'Admin', now(), 'Admin', now()),
-       (10, 1, 5, now() - interval '72h', now(), 5, 5, 'Admin', now(), 'Admin', now());
+       (10, 1, 5, now() - interval '72h', now(), 5, 5, 'Admin', now(), 'Admin', now()),
+       (4, 10, 3, now() + interval '72h', now(), 4, 2, 'Admin', now(), 'Admin', now());
 
 --date of referral for research - дата направления на исследование
 --date of research

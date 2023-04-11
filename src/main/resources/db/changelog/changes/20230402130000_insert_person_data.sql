@@ -87,3 +87,8 @@ values ('Laborant2003', crypt('Delay2003*', gen_salt('bf', 10)), 'Потапов
        ('Laborant2007', crypt('Delay2003*', gen_salt('bf', 10)), 'Румянцев', 'Петр', 'Мелентьевич', '09.02.1995', '+7-911-015-22-08',
         'laborant2007@mail.ru', '125-213-078 52',
         'Admin', now(), 'Admin', now());
+insert into person(login, password, last_name, first_name, middle_name, birth_date, phone, email, snils, created_by,
+                   created_when, modified_by, modified_when)
+values ('Registrator2003', crypt('Registrator2003*', gen_salt('bf', 10)), 'Прыгунова', 'Раиса', 'Андреевна', '07.11.1985', '+7-912-011-11-00',
+        'кegistrator3@mail.ru', '133-835-335 12',
+        'Admin', now(), 'Admin', now());

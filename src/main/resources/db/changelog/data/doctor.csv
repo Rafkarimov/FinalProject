@@ -8,3 +8,4 @@ person_id;med_specialization_id;created_by;created_when;modified_by;modified_whe
 8;8;Admin;CURRENT_TIMESTAMP;Admin;CURRENT_TIMESTAMP
 9;9;Admin;CURRENT_TIMESTAMP;Admin;CURRENT_TIMESTAMP
 10;10;Admin;CURRENT_TIMESTAMP;Admin;CURRENT_TIMESTAMP
+27;12;Admin;CURRENT_TIMESTAMP;Admin;CURRENT_TIMESTAMP
