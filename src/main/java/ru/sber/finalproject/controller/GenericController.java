@@ -1,6 +1,7 @@
 package ru.sber.finalproject.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
+import java.util.concurrent.TimeUnit;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.server.ResponseStatusException;
 import ru.sber.finalproject.dto.GenericDto;
 import ru.sber.finalproject.model.GenericModel;
 import ru.sber.finalproject.service.GenericService;
@@ -42,13 +44,17 @@ public abstract class GenericController<E extends GenericModel, D extends Generi
 
     @Operation(description = "Создать новую запись", method = "create")
     @PostMapping("/create")
-    public ResponseEntity<D> create(@RequestBody D newDto) {
+    public ResponseEntity<D> create(@RequestBody D newDto) throws InterruptedException {
         if (newDto.getId() != null && genericService.existsById(newDto.getId())) {
             log.warn("Failed to create {} with id {}, because it already exists", newDto.getClass().getSimpleName(),
                     newDto.getId());
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
         D result = genericService.create(newDto);
+//        TimeUnit.SECONDS.sleep(10L); // Поставить в спячку
+//        if (1 > 0) {
+//            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Exception");
+//        }
         return ResponseEntity
                 .status(HttpStatus.CREATED)
                 .body(result);
