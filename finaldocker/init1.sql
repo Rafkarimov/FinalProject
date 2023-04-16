@@ -14,7 +14,7 @@ CREATE TABLE person
     created_when  TIMESTAMP    NOT NULL,
     modified_by   VARCHAR(100) NOT NULL,
     modified_when TIMESTAMP    NOT NULL,
-    UNIQUE(login, email)
+    UNIQUE(login,phone, email)
 );
 
 ALTER TABLE person
