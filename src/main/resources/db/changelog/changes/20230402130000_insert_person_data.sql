@@ -27,7 +27,8 @@ values ('Terapeft', crypt('Terapeft2023*', gen_salt('bf', 10)), 'Иванов', 
        ('Narkolog', crypt('Narkolog2023*', gen_salt('bf', 10)), 'Ползунова', 'Нина', 'Ивановна', '07.02.1980', '+7-911-456-74-33',
         'narkolog2023@yandex.ru', '645-212-123 22',
         'Admin', now(), 'Admin', now()),
-       ('Nevropatolog', crypt('Nevropatolog2023*', gen_salt('bf', 10)), 'Копылова', 'Светлана', 'Ивановна', '09.12.1961', '+7-911-212-11-33',
+       ('Nevropatolog', crypt('Nevropatolog2023*', gen_salt('bf', 10)), 'Копылова', 'Светлана', 'Ивановна', '09.12.1961',
+        '+7-911-212-11-33',
         'nevropatolog2023@yandex.ru', '123-444-213 22',
         'Admin', now(), 'Admin', now()),
        ('Onkolog', crypt('Onkolog2023*', gen_salt('bf', 10)), 'Потапов', 'Анатолий', 'Иванович', '12.11.1972', '+7-911-421-22-44',
@@ -40,16 +41,17 @@ values ('Rafail', crypt('Rafail2023*', gen_salt('bf', 10)), 'Каримов', '�
         'Admin', now(), 'Admin', now());
 insert into person(login, password, last_name, first_name, middle_name, birth_date, phone, email, snils, created_by,
                    created_when, modified_by, modified_when)
-values ('User2003', crypt(crypt('Delay2003*', gen_salt('bf', 10)), gen_salt('bf', 10)), 'Иванов', 'Петр', 'Перович', '05.12.1965', '+7-911-513-11-22',
+values ('User2003', crypt(crypt('Delay2003*', gen_salt('bf', 10)), gen_salt('bf', 10)), 'Иванов', 'Петр', 'Перович', '05.12.1965',
+        '+7-911-513-11-22',
         'delay2003@mail.ru', '213-222-111 22',
         'Admin', now(), 'Admin', now()),
-       ('User2004', crypt('Delay2003*', gen_salt('bf', 10)), 'Свиридова', 'Антонина', 'Леопольдовна', '05.03.1955', '+7-911-777-22-33',
+       ('User2004', crypt('Delay2003*', gen_salt('bf', 10)), 'Свиридова', 'Антонина', 'Леопольдовна', '05.03.1955', '+7-911-777-22-44',
         'delay2004@mail.ru', '123-123-123 22',
         'Admin', now(), 'Admin', now()),
        ('User2005', crypt('Delay2003*', gen_salt('bf', 10)), 'Загинайло', 'Марина', 'Львовна', '06.12.1970', '+7-911-135-12-11',
         'delay2005@mail.ru', '123-123-215 77',
         'Admin', now(), 'Admin', now()),
-       ('User2006', crypt('Delay2003*', gen_salt('bf', 10)), 'Петров', 'Степан', 'Иванович', '05.03.1955', '+7-911-777-22-33',
+       ('User2006', crypt('Delay2003*', gen_salt('bf', 10)), 'Петров', 'Степан', 'Иванович', '05.03.1955', '+7-911-777-22-55',
         'delay2006@mail.ru', '123-182-777 65',
         'Admin', now(), 'Admin', now()),
        ('User2007', crypt('Delay2003*', gen_salt('bf', 10)), 'Милорадов', 'Илларион', 'Анатольевич', '12.10.1990', '+7-911-784-11-22',
@@ -67,7 +69,7 @@ values ('User2003', crypt(crypt('Delay2003*', gen_salt('bf', 10)), gen_salt('bf'
        ('User2011', crypt('Delay2003*', gen_salt('bf', 10)), 'Попова', 'Светлана', 'Рудольфовна', '12.05.1980', '+7-911-231-23-33',
         'delay2011@mail.ru', '321-555-756 22',
         'Admin', now(), 'Admin', now()),
-       ('User2004', crypt('Delay2003*', gen_salt('bf', 10)), 'Кислицкая', 'Венера', 'Степановна', '05.12.1981', '+7-911-777-22-33',
+       ('User2012', crypt('Delay2003*', gen_salt('bf', 10)), 'Кислицкая', 'Венера', 'Степановна', '05.12.1981', '+7-911-777-22-33',
         'delay2012@mail.ru', '123-123-759 22',
         'Admin', now(), 'Admin', now());
 insert into person(login, password, last_name, first_name, middle_name, birth_date, phone, email, snils, created_by,
@@ -89,6 +91,7 @@ values ('Laborant2003', crypt('Delay2003*', gen_salt('bf', 10)), 'Потапов
         'Admin', now(), 'Admin', now());
 insert into person(login, password, last_name, first_name, middle_name, birth_date, phone, email, snils, created_by,
                    created_when, modified_by, modified_when)
-values ('Registrator2003', crypt('Registrator2003*', gen_salt('bf', 10)), 'Прыгунова', 'Раиса', 'Андреевна', '07.11.1985', '+7-912-011-11-00',
+values ('Registrator2003', crypt('Registrator2003*', gen_salt('bf', 10)), 'Прыгунова', 'Раиса', 'Андреевна', '07.11.1985',
+        '+7-912-011-11-00',
         'кegistrator3@mail.ru', '133-835-335 12',
         'Admin', now(), 'Admin', now());

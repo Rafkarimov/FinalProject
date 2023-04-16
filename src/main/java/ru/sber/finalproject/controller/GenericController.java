@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.server.ResponseStatusException;
 import ru.sber.finalproject.dto.GenericDto;
 import ru.sber.finalproject.model.GenericModel;
 import ru.sber.finalproject.service.GenericService;
@@ -52,9 +51,6 @@ public abstract class GenericController<E extends GenericModel, D extends Generi
         }
         D result = genericService.create(newDto);
 //        TimeUnit.SECONDS.sleep(10L); // Поставить в спячку
-//        if (1 > 0) {
-//            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Exception");
-//        }
         return ResponseEntity
                 .status(HttpStatus.CREATED)
                 .body(result);
